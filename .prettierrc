@@ -1,0 +1,6 @@
+{
+    "singleQuote": true,
+    "trailingComma": "all",
+    "--html-whitespace-sensitivity": "ignore"
+  }
+  
