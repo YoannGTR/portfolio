@@ -1,91 +1,24 @@
-/* Basic Reset */
-* {
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-}
-
-/* Menu styles */
-nav {
-    position: relative;
     width: 100%;
-    background-color: #333;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #f0f0f0;
+}
+body{
+    height: 300vh;
+}
+main {
+    height: 300vh;
+    
+    width: 100%;
+    background-color: aqua;
 }
 
-.menu {
-    display: none;
-    list-style: none;
-    padding: 10px;
-}
-
-.menu li {
-    margin: 10px 0;
-}
-
-.menu li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.menu-toggle {
-    display: none;
-}
-
-.menu-icon {
-    display: block;
-    width: 30px;
-    height: 25px;
-    position: relative;
-    cursor: pointer;
-    margin: 15px;
-}
-
-.menu-icon span {
-    background-color: white;
+#canvas {
     position: absolute;
-    width: 100%;
-    height: 4px;
-    left: 0;
-    transition: all 0.3s;
-}
-
-.menu-icon span:nth-child(1) {
-    top: 0;
-}
-
-.menu-icon span:nth-child(2) {
-    top: 10px;
-}
-
-.menu-icon span:nth-child(3) {
-    top: 20px;
-}
-
-.menu-toggle:checked + .menu-icon span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 10px;
-}
-
-.menu-toggle:checked + .menu-icon span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle:checked + .menu-icon span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 10px;
-}
-
-.menu-toggle:checked + .menu-icon + .menu {
-    display: block;
-    background-color: #333;
-    position: absolute;
-    width: 100%;
-    top: 50px;
-    left: 0;
-    z-index: 1;
+    border: 1px solid black;
 }
