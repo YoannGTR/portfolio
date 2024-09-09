@@ -76,8 +76,10 @@ main{
     position: absolute;
     top: 5rem;
     left: 0;
+    bottom: 0;
     width: 100%;
-    height: 150vh;
+    height: 100%;
+    margin-bottom: -5rem;
     z-index:-1;
 }
 
@@ -102,12 +104,13 @@ main{
 }
 @media screen and (min-width: 1280px){
     main{
-        max-width: 1280px;
+        /* max-width: 1280px; */
         margin: auto;
         /* border: #000000 solid 1px; */
     }
     #background_lines{
-        max-width: 1280px;
+        /* max-width: 1280px; */
+        top: 0;
         transform: translate(-50%, 0%);
         left: 50%;
     }

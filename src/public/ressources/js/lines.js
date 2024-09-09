@@ -1,7 +1,7 @@
 let canvas = document.getElementById('background_lines');
 let ctx = canvas.getContext('2d');
 console.log(window.innerWidth);
-canvas.width = window.innerWidth<1280?window.innerWidth:1280;
+canvas.width = window.innerWidth;//<1280?window.innerWidth:1280;
 console.log('canvas.width: ', canvas.width);
 canvas.height = document.getElementById('background_lines').clientHeight;
 
@@ -78,7 +78,7 @@ window.addEventListener('resize', () => {
 function resize() {
   canvas = document.getElementById('background_lines');
   ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth<1280?window.innerWidth:1280;
+  canvas.width = window.innerWidth;//<1280?window.innerWidth:1280;
   
 
   canvas.height = window.innerHeight * 1.5;
@@ -97,10 +97,10 @@ function calculateCanva(){
   if(window.innerWidth < 768){
     startX = canvas.width / 2;
     dx = -20;
-    dy = canvas.height / 80;
+    dy = 13;
   }else{
     startX = canvas.width / 3;
     dx = -20;
-    dy = canvas.height / 150;
+    dy = 10;
   }
 }
