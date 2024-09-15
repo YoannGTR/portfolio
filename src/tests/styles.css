@@ -15,7 +15,8 @@ main {
     height: 300vh;
     
     width: 100%;
-    background-color: aqua;
+    /* background-color: aqua; */
+    background-color: rgb(226, 226, 226);
 }
 
 #canvas {
