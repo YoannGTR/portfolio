@@ -4,18 +4,18 @@ canvas.width = window.innerWidth; //<1280?window.innerWidth:1280;
 canvas.height = document.getElementById('background_lines').clientHeight;
 
 const reduc = 0.6;
-var triangleSize = canvas.width / 10;
+var triangleSize = canvas.width / 30;
 var halfSize = triangleSize * reduc;
 var rows = Math.ceil(canvas.height / (triangleSize * reduc)) + 1;
 var cols = Math.ceil(canvas.width / (triangleSize * reduc)) + 1;
 
 const triangles = [];
 
-function getRandomGray(excludeColor) {
+function getRandomGray(excludeColor, nuance1, nuance2) {
   let grayValue;
   let condition = true;
   while (condition) {
-    grayValue = Math.floor(Math.random() * 100) + 100; // Nuances de gris entre 100 et 200
+    grayValue = Math.floor(Math.random() * nuance1) + nuance2; // Nuances de gris entre 100 et 200
     if (excludeColor) {
       condition = excludeColor.some(
         (color) => grayValue <= color + 5 && grayValue >= color - 5,
@@ -30,7 +30,8 @@ function getRandomGray(excludeColor) {
 
 function createTriangles() {
   let delay = 0;
-  for (let row = 0; row < rows; row++) {
+  let row ;
+  for (row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
       let x = col * halfSize;
       let y = (row * halfSize) / reduc;
@@ -57,11 +58,58 @@ function createTriangles() {
         adjacentColors.push(triangles[row * cols + col - 1]?.grayValue);
       }
 
-      let grayValue = getRandomGray(adjacentColors);
+      let grayValue = getRandomGray(adjacentColors, 100, 100);
       triangles.push({ x, y, grayValue, pointingUp, opacity: 0, delay });
-      delay += 1;
+      // delay += 1;
     }
+    if(((row * halfSize) / reduc)>=window.innerWidth){
+      break;
+    }
+    // console.log(window.innerHeight);
   }
+  createTrianglesDegrade(row+1);
+}
+
+function createTrianglesDegrade(stoppedRow) {
+  let delay = 0;
+  let degrade = 100;
+  for (let row = stoppedRow; row < stoppedRow+stoppedRow/5; row++) {
+    console.log("row:" + row);
+    degrade += 140/(stoppedRow/5);
+    for (let col = 0; col < cols; col++) {
+      let x = col * halfSize;
+      let y = (row * halfSize) / reduc;
+
+      // Déterminer si le triangle pointe vers le haut ou le bas
+      let pointingUp = (row + col) % 2 === 0;
+
+      // Obtenir une couleur qui n'est pas la même que les voisins
+      let adjacentColors = [];
+      if (row > 0) {
+        // Triangle au-dessus
+        adjacentColors.push(triangles[(row - 1) * cols + col]?.grayValue);
+        if (col > 0) {
+          // Triangle en haut à gauche
+          adjacentColors.push(triangles[(row - 1) * cols + col - 1]?.grayValue);
+        }
+        if (col < cols - 1) {
+          // Triangle en haut à droite
+          adjacentColors.push(triangles[(row - 1) * cols + col + 1]?.grayValue);
+        }
+      }
+      if (col > 0) {
+        // Triangle à gauche
+        adjacentColors.push(triangles[row * cols + col - 1]?.grayValue);
+      }
+
+      let grayValue = getRandomGray(adjacentColors, 100, degrade);
+      triangles.push({ x, y, grayValue, pointingUp, opacity: 0, delay });
+      // delay += 1;
+    }
+    
+    // console.log(window.innerHeight);
+  }
+
 }
 
 function drawTriangle(x, y, size, color, pointingUp, opacity) {
@@ -131,3 +179,6 @@ window.addEventListener('resize', () => {
   });
   animateTriangles();
 });
+
+
+//rajouter un dégrader fin lp

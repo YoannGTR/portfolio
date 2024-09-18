@@ -3,9 +3,9 @@ function writeSkills() {
     .then((response) => response.json())
     .then((data) => {
       // Use the data from the skills.json file here
-      console.log(data);
+      // console.log(data);
       Array.from(data['skills']).forEach((element) => {
-        console.log(element);
+        // console.log(element);
         let skill = document.createElement('div');
         skill.classList.add('skill');
         let skillName = document.createElement('h4');
@@ -19,31 +19,36 @@ function writeSkills() {
     });
 }
 writeSkills();
+var dicStudyDate = {};
 
-function writeExperience() {
-  fetch('./ressources/js/jsons/experiences.json')
-    .then((response) => response.json())
-    .then((data) => {
-      // Use the data from the skills.json file here
-      console.log(data);
-      Array.from(data['experiences']).forEach((element) => {
-        console.log(element);
-        if (element['category'] == 'job') {
-          writeJob(element);
-        } else if (element['category'] == 'study') {
-          writeStudy(element);
-        }
-      });
-    })
-    .catch((error) => {
-      console.error('Error:', error);
+async function writeExperience() {
+  try {
+    const response = await fetch('./ressources/js/jsons/experiences.json');
+    const data = await response.json();
+    // console.log(data);
+    cpt = 1;
+    Array.from(data['experiences']).forEach((element) => {
+      // console.log(element);
+      if (element['category'] == 'job') {
+        writeJob(element);
+      } else if (element['category'] == 'study') {
+        writeStudy(element, cpt);
+      }
+      cpt++;
     });
+    // console.log('test');
+    // console.log(dicStudyDate);
+  } catch (error) {
+    // Use the data from the skills.json file here
+    console.error('Error:', error);
+  }
 }
 
-function writeStudy(element) {
+function writeStudy(element, cpt) {
   let date = document.createElement('div');
   date.classList.add('date');
   date.classList.add('dateStudy');
+  dicStudyDate[cpt] = date;
   let description = document.createElement('div');
   description.classList.add('description');
   description.classList.add('descriptionStudy');
@@ -77,7 +82,6 @@ function writeStudy(element) {
     date.appendChild(studySecDate);
   }
 
-  
   document.getElementById('listExperience').appendChild(date);
   document.getElementById('listExperience').appendChild(description);
   document.getElementById('listExperience').appendChild(vide);
@@ -124,4 +128,22 @@ function writeJob(element) {
   document.getElementById('listExperience').appendChild(description);
 }
 
-writeExperience();
+function gridChange() {
+  if (window.innerWidth > 768) {
+    for (const key in dicStudyDate) {
+      dicStudyDate[key].style.gridRow = key;
+    }
+  } else {
+    for (const key in dicStudyDate) {
+      dicStudyDate[key].style.gridRow = 'auto';
+    }
+  }
+}
+async function test() {
+  await writeExperience();
+  // console.log('gridChange');
+  gridChange();
+}
+test();
+// window.onresize = gridChange();
+window.addEventListener('resize', gridChange);
