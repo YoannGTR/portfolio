@@ -4,10 +4,10 @@ canvas.width = window.innerWidth; //<1280?window.innerWidth:1280;
 canvas.height = document.getElementById('background_lines').clientHeight;
 
 const reduc = 0.6;
-var triangleSize = canvas.width/10;
+var triangleSize = canvas.width / 10;
 var halfSize = triangleSize * reduc;
-var rows = Math.ceil(canvas.height / (triangleSize*reduc)) + 1;
-var cols = Math.ceil(canvas.width / (triangleSize*reduc)) + 1;
+var rows = Math.ceil(canvas.height / (triangleSize * reduc)) + 1;
+var cols = Math.ceil(canvas.width / (triangleSize * reduc)) + 1;
 
 const triangles = [];
 
@@ -17,10 +17,11 @@ function getRandomGray(excludeColor) {
   while (condition) {
     grayValue = Math.floor(Math.random() * 100) + 100; // Nuances de gris entre 100 et 200
     if (excludeColor) {
-      condition = excludeColor.some((color) => grayValue <= color+5 && grayValue >= color-5);
+      condition = excludeColor.some(
+        (color) => grayValue <= color + 5 && grayValue >= color - 5,
+      );
       // console.log(condition);
-    }
-    else {
+    } else {
       condition = false;
     }
   }
@@ -30,38 +31,37 @@ function getRandomGray(excludeColor) {
 function createTriangles() {
   let delay = 0;
   for (let row = 0; row < rows; row++) {
-      for (let col = 0; col < cols; col++) {
-          let x = col * halfSize;
-          let y = row * halfSize/reduc;
+    for (let col = 0; col < cols; col++) {
+      let x = col * halfSize;
+      let y = (row * halfSize) / reduc;
 
-          // Déterminer si le triangle pointe vers le haut ou le bas
-          let pointingUp = (row + col) % 2 === 0;
+      // Déterminer si le triangle pointe vers le haut ou le bas
+      let pointingUp = (row + col) % 2 === 0;
 
-          // Obtenir une couleur qui n'est pas la même que les voisins
-          let adjacentColors = [];
-          if (row > 0) {
-              // Triangle au-dessus
-              adjacentColors.push(triangles[(row - 1) * cols + col]?.grayValue);
-              if (col > 0) {
-                  // Triangle en haut à gauche
-                  adjacentColors.push(triangles[(row - 1) * cols + col - 1]?.grayValue);
-              }
-              if (col < cols - 1) {
-                  // Triangle en haut à droite
-                  adjacentColors.push(triangles[(row - 1) * cols + col + 1]?.grayValue);
-              }
-          }
-          if (col > 0) {
-              // Triangle à gauche
-              adjacentColors.push(triangles[row * cols + col - 1]?.grayValue);
-          }
-
-          let grayValue = getRandomGray(adjacentColors);
-          triangles.push({ x, y, grayValue, pointingUp, opacity: 0, delay });
-          delay += 1;
+      // Obtenir une couleur qui n'est pas la même que les voisins
+      let adjacentColors = [];
+      if (row > 0) {
+        // Triangle au-dessus
+        adjacentColors.push(triangles[(row - 1) * cols + col]?.grayValue);
+        if (col > 0) {
+          // Triangle en haut à gauche
+          adjacentColors.push(triangles[(row - 1) * cols + col - 1]?.grayValue);
+        }
+        if (col < cols - 1) {
+          // Triangle en haut à droite
+          adjacentColors.push(triangles[(row - 1) * cols + col + 1]?.grayValue);
+        }
       }
-  }
+      if (col > 0) {
+        // Triangle à gauche
+        adjacentColors.push(triangles[row * cols + col - 1]?.grayValue);
+      }
 
+      let grayValue = getRandomGray(adjacentColors);
+      triangles.push({ x, y, grayValue, pointingUp, opacity: 0, delay });
+      delay += 1;
+    }
+  }
 }
 
 function drawTriangle(x, y, size, color, pointingUp, opacity) {
@@ -120,10 +120,10 @@ animateTriangles();
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = document.getElementById('background_lines').clientHeight;
-  triangleSize = canvas.width/10;
+  triangleSize = canvas.width / 10;
   halfSize = triangleSize * reduc;
-  rows = Math.ceil(canvas.height / (triangleSize*reduc)) + 1;
-  cols = Math.ceil(canvas.width / (triangleSize*reduc)) + 1;
+  rows = Math.ceil(canvas.height / (triangleSize * reduc)) + 1;
+  cols = Math.ceil(canvas.width / (triangleSize * reduc)) + 1;
   triangles.length = 0;
   createTriangles();
   triangles.forEach((triangle) => {
