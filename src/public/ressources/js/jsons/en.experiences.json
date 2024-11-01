@@ -2,40 +2,40 @@
   "experiences": [
     {
       "category": "study",
-      "title": "Baccalauréat général",
-      "line": "Spécialité Mathématiques et Sciences de l'Ingénieur",
-      "mention": "Mention Bien",
+      "title": "General baccalaureate",
+      "line": "Specialty in Mathematics and Engineering Sciences",
+      "mention": "Honors",
       "dateBegin": "2019",
       "dateEnd": "2022",
       "picture": "./ressources/assets/images/vide.png"
     },
     {
       "category": "job",
-      "title": "Serveur",
+      "title": "Waiter",
       "company": "Restaurant Le Rétro",
       "location": "Peros-Guirec, 22",
-      "dateBegin": "Juillet 2022",
+      "dateBegin": "July 2022",
       "dateEnd": "",
-      "description": "Service en salle, accueil des clients, service des plats et boissons.",
+      "description": "Table service, welcoming customers, serving dishes and drinks.",
       "picture": "./ressources/assets/images/vide.png"
     },
     {
       "category": "study",
-      "title": "BUT informatique",
-      "line": "Parcours A : Développement d'applications",
-      "mention": "Mention Bien",
+      "title": "BUT in Computer Science",
+      "line": "Path A: Application Development",
+      "mention": "Honors",
       "dateBegin":"2022",
       "dateEnd":"2025",
       "picture": "./ressources/assets/images/vide.png"
     },
     {
       "category": "job",
-      "title": "Développeur-Concepteur en alternance",
+      "title": "Apprentice Developer-Designer",
       "company": "Open",
       "location": "Lannion, 22",
       "dateBegin": "2023",
       "dateEnd": "2025",
-      "description": "Développement d'un logiciel",
+      "description": "Software development",
       "picture": "./ressources/assets/images/vide.png"
     }
   ]
