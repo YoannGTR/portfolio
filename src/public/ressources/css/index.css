@@ -151,6 +151,7 @@ p {
   text-align: justify;
 }
 #skills,
+#skills2,
 #experience,
 #project {
   display: flex;
@@ -160,6 +161,7 @@ p {
   padding-top: 1rem;
 }
 #skills > h2,
+#skills2 > h2,
 #experience > h2,
 #project > h2 {
   align-self: center;
@@ -178,6 +180,43 @@ p {
   border-radius: 0.5rem;
   background-color: var(--light-gray);
 }
+#skills2>div{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 1rem;
+  align-items: center;  
+}
+#hardSkills{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+#hardSkills>div{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+.hardSkill{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.underSkill{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: left;
+  margin-left: 3rem;
+  list-style: circle;
+}
+
+
 #listExperience {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -260,7 +299,7 @@ p {
   /* border: 1px solid black; */
   border-radius: 0.5rem;
   background-color: var(--purple);
-  background-image: url('../assets/images/vide.png');
+  background-image: url('../assets/images/logo.png');
   background-size: cover;
   background-position: center;
   width: 100%;

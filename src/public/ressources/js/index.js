@@ -202,3 +202,16 @@ document.getElementsByClassName("project")[0].addEventListener("click", function
   console.log(document.getElementsByClassName("descProject")[0].style.marginTop);
   document.getElementsByClassName("descProject")[0].style.marginTop = "0rem";
 });
+
+
+document.querySelectorAll(".hardSkill").forEach((element) => {
+  element.addEventListener("click", function(){
+    console.log("click");
+    console.log(element.lastElementChild);
+    if(element.lastElementChild.style.display == "none"){
+      element.lastElementChild.style.display = "block";
+    }else{
+        element.lastElementChild.style.display = "none";
+      }
+  });
+});
