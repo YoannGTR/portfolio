@@ -235,6 +235,9 @@ main {
     
     align-items: center;
   }
+  #header_menuNav li a{
+    white-space: nowrap;
+  }
   #header_menuNav div {
     gap: 1.5rem;
     flex-direction: row;

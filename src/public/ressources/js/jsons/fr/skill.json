@@ -1,7 +1,7 @@
 {
   "titles":[
     "Développement",
-    "Autres"
+    "Annexes"
   ],
   "skills": {
     "hard": [
@@ -152,7 +152,7 @@
         ]
       },
       {
-        "name": "Utilisation de l'IA",
+        "name": "Utilisation des IA",
         "level": 3.0,
         "under-skill": [
           {
