@@ -1,0 +1,170 @@
+{
+  "titles":[
+    "Development",
+    "Others"
+  ],
+  "skills": {
+    "hard": [
+      {
+        "name": "Java",
+        "level": 4.0,
+        "under-skill": [
+          {
+            "name": "JavaFX",
+            "level": 3.0
+          },
+          {
+            "name": "Swing",
+            "level": 2.0
+          }
+        ]
+      },
+      {
+        "name": "HTML/CSS",
+        "level": 4.0,
+        "under-skill": [
+          {
+            "name": "Bootstrap",
+            "level": 4.0
+          },
+          {
+            "name": "SASS/SCSS",
+            "level": 3.0
+          }
+        ]
+      },
+      {
+        "name": "JavaScript",
+        "level": 4.0,
+        "under-skill": [
+          {
+            "name": "NodeJS",
+            "level": 3.0
+          },
+          {
+            "name": "JSON",
+            "level": 3.0
+          }
+        ]
+      },
+      {
+        "name": "PHP",
+        "level": 3.0,
+        "under-skill": [
+          {
+            "name": "Laravel",
+            "level": 3.0
+          }
+        ]
+      },
+      {
+        "name": "Bash",
+        "level": 3.0,
+        "under-skill": [
+          {
+            "name": "Batch",
+            "level": 3.0
+          },
+          {
+            "name": "VBScript",
+            "level": 2.0
+          }
+        ]
+      },
+      {
+        "name": "SQL",
+        "level": 3.0,
+        "under-skill": [
+          {
+            "name": "MySQL",
+            "level": 3.0
+          },
+          {
+            "name": "PostgreSQL",
+            "level": 2.0
+          }
+        ]
+      },
+      {
+        "name": "Python",
+        "level": 3.0
+      },
+      {
+        "name": "C",
+        "level": 3.0
+      },
+      {
+        "name": "Docker",
+        "level": 3.0
+      }
+    ],
+    "soft": [
+      {
+        "name": "Project management",
+        "level": 4.0,
+        "under-skill": [
+          {
+            "name": "Jira",
+            "level": 3.0
+          }
+        ]
+      },
+      {
+        "name": "Modeling",
+        "level": 3.0,
+        "under-skill": [
+          {
+            "name": "Figma",
+            "level": 3.0
+          },
+          {
+            "name": "Graphic charter",
+            "level": 2.0
+          }
+        ]
+      },
+      {
+        "name": "Git",
+        "level": 3.0,
+        "under-skill": [
+          {
+            "name": "GitHub",
+            "level": 3.0
+          },
+          {
+            "name": "GitLab",
+            "level": 2.0
+          }
+        ]
+      },
+      {
+        "name": "Quality",
+        "level": 3.0,
+        "under-skill": [
+          {
+            "name": "Sonar",
+            "level": 3.0
+          },
+          {
+            "name": "TU with Junit",
+            "level": 2.0
+          }
+        ]
+      },
+      {
+        "name": "Use of AI",
+        "level": 3.0,
+        "under-skill": [
+          {
+            "name": "ChatGPT",
+            "level": 2.5
+          },
+          {
+            "name": "Copilot",
+            "level": 3.0
+          }
+        ]
+      }
+    ]
+  }
+}

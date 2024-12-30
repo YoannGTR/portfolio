@@ -1,0 +1,46 @@
+{
+  "titles":[
+    "Studies",
+    "Work"
+  ],
+  "experiences": [
+    {
+      "category": "study",
+      "title": "General baccalaureate",
+      "line": "Specialty in Mathematics and Engineering Sciences",
+      "mention": "Honors",
+      "dateBegin": "2019",
+      "dateEnd": "2022",
+      "picture": "./ressources/assets/images/logo.png"
+    },
+    {
+      "category": "job",
+      "title": "Waiter",
+      "company": "Restaurant Le Rétro",
+      "location": "Peros-Guirec, 22",
+      "dateBegin": "July 2022",
+      "dateEnd": "",
+      "description": "Table service, welcoming customers, serving dishes and drinks.",
+      "picture": "./ressources/assets/images/logo.png"
+    },
+    {
+      "category": "study",
+      "title": "BUT in Computer Science",
+      "line": "Path A: Application Development",
+      "mention": "Honors",
+      "dateBegin":"2022",
+      "dateEnd":"2025",
+      "picture": "./ressources/assets/images/logo.png"
+    },
+    {
+      "category": "job",
+      "title": "Apprentice Developer-Designer",
+      "company": "Open",
+      "location": "Lannion, 22",
+      "dateBegin": "2023",
+      "dateEnd": "2025",
+      "description": "Software development",
+      "picture": "./ressources/assets/images/logo.png"
+    }
+  ]
+}

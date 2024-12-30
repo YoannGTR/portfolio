@@ -1,14 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animation de Trait en Z</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Bouton avec menu déroulant progressif</title>
+    <style>
+        /* Style pour le bouton */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* Conteneur de la liste déroulante */
+        .dropdown-content {
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: hidden; /* Cache le débordement */
+            max-height: 0; /* Cache le contenu par défaut */
+            opacity: 1; /* Invisible par défaut */
+            transition: max-height 0.4s ease, opacity 0.4s ease; /* Animation douce */
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        /* Style des éléments de la liste */
+        .dropdown-content a {
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+        }
+
+        /* Change la couleur au survol */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Classe pour afficher la liste déroulante */
+        .dropdown-content.show {
+            max-height: 200px; /* Ajuste la hauteur selon le contenu */
+            opacity: 1; /* Rend la liste visible */
+        }
+    </style>
 </head>
-<body id="body">
-    <main id="main"></main>
-    <canvas id="canvas"></canvas>
-    <script src="script.js"></script>
+<body>
+
+<div class="dropdown">
+    <button class="dropdown-btn" onclick="toggleDropdown()">Afficher les mots-clés</button>
+    <div class="dropdown-content" id="dropdownContent">
+        <a href="#">Mot-clé 1</a>
+        <a href="#">Mot-clé 2</a>
+        <a href="#">Mot-clé 3</a>
+        <a href="#">Mot-clé 4</a>
+    </div>
+</div>
+
+<script>
+    function toggleDropdown() {
+        const dropdown = document.getElementById("dropdownContent");
+        dropdown.classList.toggle("show");
+    }
+
+    // Ferme la liste déroulante si l'utilisateur clique en dehors
+    window.addEventListener("click", function(event) {
+        const dropdown = document.getElementById("dropdownContent");
+        const button = document.querySelector(".dropdown-btn");
+        if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+            dropdown.classList.remove("show");
+        }
+    });
+</script>
+
 </body>
 </html>

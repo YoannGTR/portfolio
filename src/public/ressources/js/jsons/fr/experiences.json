@@ -1,0 +1,46 @@
+{
+  "titles":[
+    "Etudes",
+    "Travail"
+  ],
+  "experiences": [
+    {
+      "category": "study",
+      "title": "Baccalauréat général",
+      "line": "Spécialité Mathématiques et Sciences de l'Ingénieur",
+      "mention": "Mention Bien",
+      "dateBegin": "2019",
+      "dateEnd": "2022",
+      "picture": "./ressources/assets/images/logo.png"
+    },
+    {
+      "category": "job",
+      "title": "Serveur",
+      "company": "Restaurant Le Rétro",
+      "location": "Peros-Guirec, 22",
+      "dateBegin": "Juillet 2022",
+      "dateEnd": "",
+      "description": "Service en salle, accueil des clients, service des plats et boissons.",
+      "picture": "./ressources/assets/images/logo.png"
+    },
+    {
+      "category": "study",
+      "title": "BUT informatique",
+      "line": "Parcours A : Développement d'applications",
+      "mention": "Mention Bien",
+      "dateBegin":"2022",
+      "dateEnd":"2025",
+      "picture": "./ressources/assets/images/logo.png"
+    },
+    {
+      "category": "job",
+      "title": "Développeur-Concepteur en alternance",
+      "company": "Open",
+      "location": "Lannion, 22",
+      "dateBegin": "2023",
+      "dateEnd": "2025",
+      "description": "Développement d'un logiciel",
+      "picture": "./ressources/assets/images/logo.png"
+    }
+  ]
+}

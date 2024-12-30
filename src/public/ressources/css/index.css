@@ -27,6 +27,9 @@
   --jetbrain: 'jetBrain';
   --jetbrainBold: 'jetBrainBold';
   --jetbrainLight: 'jetBrainLight';
+
+  --color1: #5A13B1;
+  --color2: #F1E1FF;
 }
 body {
   width: 100%;
@@ -50,7 +53,7 @@ h1,
 h2,
 h3 {
   font-family: var(--jetbrainBold);
-  color: var(--purple);
+  color: var(--color1);
 }
 p {
   font-family: var(--jetbrain);
@@ -74,7 +77,7 @@ p {
   /* text-align: center; */
 }
 #landing h1 span {
-  color: var(--purple);
+  color: var(--color1);
 }
 .landingBig {
   font-size: 2.5rem;
@@ -207,14 +210,154 @@ p {
   justify-content: start;
   align-items: center;
 }
+.hardSkill>div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.hardSkill>div svg{
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+}
 .underSkill{
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: left;
-  margin-left: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   list-style: circle;
+
+  overflow: hidden;
+  max-height: 0px;
+  transition: 0.5s ease;
 }
+.showSkill{
+  
+}
+
+
+#article-skill{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+#groups-skill{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.group-skill{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  /* border: 3px solid var(--purple); */
+  border-radius: 0.5rem;
+}
+.group-skill>h3{
+  color: var(--black);
+}
+
+.skills{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+.one-skill{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: var(--color2);
+  border-radius: 0.5rem;
+  width: 15rem;
+  transition: max-height 0.5s ease;
+  overflow: hidden;
+}
+.header-skill{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: var(--color1);
+  border-radius: 0.5rem;
+}
+.header-with-dropdown {
+  cursor: pointer;
+}
+.type-skill{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap:0;
+  color: var(--white);
+}
+.note-skill, .note-under-skill{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 0rem;
+}
+
+
+.arrow-dropdown-skill{
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.note-skill>svg, .note-under-skill>svg{
+  width: 0.8rem;
+  height: 0.8rem;
+  object-fit: contain;
+}
+
+.body-skill{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+
+  /* overflow: hidden; */
+  /* max-height: 0px; */
+  /* transition: max-height 0.5s ease; */
+}
+.under-skill{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+
+
+
 
 
 #listExperience {
@@ -528,6 +671,27 @@ p {
   #listSkills {
     justify-content: center;
   }
+
+  #groups-skill{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 1rem;
+    width: 100%;
+  }
+  .group-skill{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 50%;
+  }
+  #article-skill{
+    width: 60rem;
+  }
+
   #experience {
     width: 60rem;
   }
@@ -550,5 +714,12 @@ p {
   }
   #landing .landingBig {
     font-size: 4rem;
+  }
+
+  #article-skill{
+    width: 68rem;
+  }
+  #groups-skill{
+    gap: 3rem;
   }
 }
