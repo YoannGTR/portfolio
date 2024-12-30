@@ -156,44 +156,6 @@ document.querySelectorAll('.oneSocialMobile').forEach((element) => {
   });
 });
 
-// function writeProjects(){
-//   fetch('./ressources/js/jsons/projects.json')
-//     .then((response) => response.json())
-//     .then((data) => {
-//       // Use the data from the skills.json file here
-//       // console.log(data);
-//       Array.from(data['projects']).forEach((element) => {
-//         // console.log(element);
-//         let project = document.createElement('div');
-//         project.classList.add('project');
-//         let projectTitle = document.createElement('h4');
-//         projectTitle.textContent = element['title'];
-//         project.appendChild(projectTitle);
-//         let projectDescription = document.createElement('p');
-//         projectDescription.textContent = element['description'];
-//         project.appendChild(projectDescription);
-//         let projectLink = document.createElement('a');
-//         projectLink.href = element['link'];
-//         projectLink.textContent = 'Lien vers le projet';
-//         project.appendChild(projectLink);
-//         document.getElementById('listProjects').appendChild(project);
-//       });
-//     })
-//     .catch((error) => {
-//       console.error('Error:', error);
-//     });
-// }
-// writeProjects();
-
-document
-  .getElementsByClassName('project')[0]
-  .addEventListener('click', function () {
-    console.log('click');
-    console.log(
-      document.getElementsByClassName('descProject')[0].style.marginTop,
-    );
-    document.getElementsByClassName('descProject')[0].style.marginTop = '0rem';
-  });
 
 
 async function writeSkills() {
@@ -317,3 +279,132 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// function writeProjects(){
+//   fetch('./ressources/js/jsons/projects.json')
+//     .then((response) => response.json())
+//     .then((data) => {
+//       // Use the data from the skills.json file here
+//       // console.log(data);
+//       Array.from(data['projects']).forEach((element) => {
+//         // console.log(element);
+//         let project = document.createElement('div');
+//         project.classList.add('project');
+//         let projectTitle = document.createElement('h4');
+//         projectTitle.textContent = element['title'];
+//         project.appendChild(projectTitle);
+//         let projectDescription = document.createElement('p');
+//         projectDescription.textContent = element['description'];
+//         project.appendChild(projectDescription);
+//         let projectLink = document.createElement('a');
+//         projectLink.href = element['link'];
+//         projectLink.textContent = 'Lien vers le projet';
+//         project.appendChild(projectLink);
+//         document.getElementById('listProjects').appendChild(project);
+//       });
+//     })
+//     .catch((error) => {
+//       console.error('Error:', error);
+//     });
+// }
+// writeProjects();
+
+// document
+//   .getElementsByClassName('project')[0]
+//   .addEventListener('click', function () {
+//     console.log('click');
+//     console.log(
+//       document.getElementsByClassName('descProject')[0].style.marginTop,
+//     );
+//     document.getElementsByClassName('descProject')[0].style.marginTop = '0rem';
+//   });
+
+function switchFilter(element) {
+  if (!element.classList.contains('selected')) {
+    document.querySelector(".selected").classList.remove('selected');
+    element.classList.add('selected');
+  }
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const customSelect = document.getElementById("customSelectFilter");
+  const selected = customSelect.querySelector(".selected");
+  const options = customSelect.querySelector(".options");
+  const optionItems = options.querySelectorAll(".option");
+
+  // Toggle options display
+  selected.addEventListener("click", () => {
+      customSelect.classList.toggle("open");
+  });
+
+  // Handle option selection
+  optionItems.forEach(option => {
+      option.addEventListener("click", () => {
+          const value = option.getAttribute("data-value");
+          const text = option.textContent;
+
+          // Update selected value
+          selected.querySelector("span").textContent = text;
+
+          // Remove active class from all options and set it to selected one
+          optionItems.forEach(opt => opt.classList.remove("active"));
+          option.classList.add("active");
+
+          // Close dropdown
+          customSelect.classList.remove("open");
+
+          // If needed, send the value to your form or backend
+          console.log("Selected value:", value);
+      });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+      if (!customSelect.contains(e.target)) {
+          customSelect.classList.remove("open");
+      }
+  });
+});
+
+async function writeProjects() {
+  console.log('writeProjects');
+ }
+
+
+
+
+
+var xmarkClicked = false;
+function zoomProjectPhone(element) {
+  if (window.innerWidth > 768) {
+    if (xmarkClicked) {
+      unZoomProjectPhone(element);
+      xmarkClicked = false;
+    } else {
+      document.querySelectorAll('.project').forEach((element) => {
+        unZoomProjectPhone(element);
+      });
+      element.style.width = '100%';
+      element.querySelector('.descProject').style.marginTop = '0rem';
+      element.querySelector('.descProject').style.height = '25rem';
+      element.querySelector('.resumeProject').style.height = 'auto';
+      element.querySelector('.xmark').style.display = 'block';
+    }
+  }
+}
+
+function unZoomProjectPhone(element) {
+  element.style.width = '45%';
+  element.querySelector('.descProject').style.marginTop = '5rem';
+  element.querySelector('.descProject').style.height = '7rem';
+  element.querySelector('.resumeProject').style.height = '0rem';
+  element.querySelector('.xmark').style.display = 'none';
+}
+
+function xmarkClick() {
+  xmarkClicked = true;
+}
+
+

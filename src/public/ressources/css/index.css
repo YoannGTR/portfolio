@@ -236,9 +236,6 @@ p {
   max-height: 0px;
   transition: 0.5s ease;
 }
-.showSkill{
-  
-}
 
 
 #article-skill{
@@ -405,6 +402,9 @@ p {
   display: none;
 }
 
+
+
+
 #filter {
   display: flex;
   flex-direction: row;
@@ -412,7 +412,6 @@ p {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /* border: 1px solid black; */
 }
 #filter > button {
   padding: 0.5rem 1rem;
@@ -421,70 +420,231 @@ p {
   background-color: var(--light-gray);
   font-family: var(--jetbrain);
   color: var(--black);
+  cursor: pointer;
 }
-#filter > button#selected {
-  background-color: var(--purple);
+#filter > button.selected {
+  background-color: var(--color1);
   color: var(--white);
-  border: 0.125rem solid var(--purple);
+  border: 0.125rem solid var(--color1);
 }
+
+#filters2>select{
+  padding: 0.5rem 1rem;
+  border: 0.125rem solid var(--color1);
+  border-radius: 0.5rem;
+  background-color: var(--color1);
+  font-family: var(--jetbrain);
+  color: var(--white);
+  cursor: pointer;
+
+}
+
+#filters2>select>option{
+  background-color: var(--color2);
+  color: var(--black);
+}
+
+
+
+
+
+
+
+
+#filters {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: top;
+  flex-wrap: wrap;
+}
+#filters>p{
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+}
+
+/* Conteneur principal */
+#filters .custom-select {
+  display: flex;
+  flex-direction: column;
+  border: 0.125rem solid var(--color1);
+  border-radius: 0.5rem;
+  background-color: var(--color1);
+  font-family: var(--jetbrain);
+  color: var(--white);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  width: max-content;
+}
+
+/* Ligne sélectionnée */
+#filters .custom-select .selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  width: 13rem;
+  
+}
+.selected span{
+  font-family: var(--jetbrainBold);
+  color: var(--white);
+  width: 100%;
+  text-align: center;
+}
+.options li{
+  font-family: var(--jetbrain);
+  color: var(--color1);
+}
+
+/* Flèche SVG */
+#filters .custom-select .selected .arrow {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+#filters .custom-select .selected .arrow .svg-arrow {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Rotation de la flèche lorsque ouvert */
+#filters .custom-select.open .selected .arrow {
+  transform: rotate(180deg);
+}
+
+/* Liste des options */
+#filters .custom-select .options {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* Espacement entre options */
+  margin-top: 0.5rem;
+  padding: 0;
+  border: 0.125rem solid var(--color1);
+  border-radius: 0.5rem;
+  background-color: var(--color1);
+  box-sizing: border-box;
+  list-style: none;
+}
+
+/* Affichage des options lorsqu'ouvert */
+#filters .custom-select.open .options {
+  display: flex;
+}
+
+/* Style des options */
+#filters .custom-select .options .option {
+  padding: 0.5rem 1rem;
+  background-color: var(--color2);
+  color: var(--black);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 0.25rem;
+}
+
+#filters .custom-select .options .option:hover {
+  background-color: var(--color1);
+  color: var(--white);
+}
+
+#filters .custom-select .options .option.active {
+  background-color: var(--color2);
+  color: var(--color1);
+  font-family: var(--jetbrainBold);
+  cursor: default;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #listProjects {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 1rem 1rem;
-  /* width: 100%; */
-  /* border: 1px solid black; */
 }
+
 .project{
   display: flex;
   flex-direction: column;
-  /* border: 1px solid black; */
-  border-radius: 0.5rem;
-  background-color: var(--purple);
+  border-radius: 0.7rem;
+  /* background-color: var(--color2); */
   background-image: url('../assets/images/logo.png');
-  background-size: cover;
-  background-position: center;
-  width: 100%;
+  background-size: contain;
+  background-position: top;
+  width: 45%;
+  border: 0.125rem solid var(--color1);
+  
+  transition: 0.1s ease-in-out;
 }
 
 .descProject{
-  margin-top: 15rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   padding: 0.5rem;
   border-radius: 0 0 0.5rem 0.5rem;
-  background-color: var(--purple);
+  background-color: var(--color1);
+  opacity: 0.9;
+  transition: 0.1s ease-in-out;
   gap: 0.5rem;
-  transition: 0.5s ease-in-out;
-  height: 5rem;
+  height: 7rem;
 }
-.project:hover .descProject{
-  margin-top: 0;
-  border-radius: 0.5rem;
-  height: 20rem;
-}
+
 .resumeProject{
   height: 0rem;
-  transition: 0.5s ease-in-out;
+  transition: 0.1s ease-in-out;
   overflow: hidden;
 }
-.project:hover .resumeProject {
-  height: auto;
-}
+
 
 
 .descProject h4, .descProject p{
   color: var(--white);
 }
+.descProjectHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: top;
+}
+.descProjectHeader svg{
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  display: none;
+}
+
 .descProject>p{
   font-family: var(--jetbrainLight);
 }
 .contextProject{
   text-align: right;
   align-self: right;
+  font-size: 0.8rem;
 }
 
 
@@ -629,8 +789,28 @@ p {
   .videJob {
     grid-column: 1;
   }
+
+
   .project{
     width: 20rem;
+    background-size: cover;
+  }
+  .descProject{
+    margin-top: 15rem;
+    transition: 0.5s ease-in-out;
+    height: 5rem;
+  }
+  .project:hover .descProject{
+    margin-top: 0;
+    border-radius: 0.5rem;
+    opacity: 0.85;
+    height: 20rem;
+  }
+  .resumeProject{
+    transition: 0.5s ease-in-out;
+  }
+  .project:hover .resumeProject {
+    height: auto;
   }
 }
 
