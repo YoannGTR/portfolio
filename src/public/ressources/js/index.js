@@ -280,44 +280,6 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// function writeProjects(){
-//   fetch('./ressources/js/jsons/projects.json')
-//     .then((response) => response.json())
-//     .then((data) => {
-//       // Use the data from the skills.json file here
-//       // console.log(data);
-//       Array.from(data['projects']).forEach((element) => {
-//         // console.log(element);
-//         let project = document.createElement('div');
-//         project.classList.add('project');
-//         let projectTitle = document.createElement('h4');
-//         projectTitle.textContent = element['title'];
-//         project.appendChild(projectTitle);
-//         let projectDescription = document.createElement('p');
-//         projectDescription.textContent = element['description'];
-//         project.appendChild(projectDescription);
-//         let projectLink = document.createElement('a');
-//         projectLink.href = element['link'];
-//         projectLink.textContent = 'Lien vers le projet';
-//         project.appendChild(projectLink);
-//         document.getElementById('listProjects').appendChild(project);
-//       });
-//     })
-//     .catch((error) => {
-//       console.error('Error:', error);
-//     });
-// }
-// writeProjects();
-
-// document
-//   .getElementsByClassName('project')[0]
-//   .addEventListener('click', function () {
-//     console.log('click');
-//     console.log(
-//       document.getElementsByClassName('descProject')[0].style.marginTop,
-//     );
-//     document.getElementsByClassName('descProject')[0].style.marginTop = '0rem';
-//   });
 
 function switchFilter(element) {
   if (!element.classList.contains('selected')) {
@@ -329,48 +291,126 @@ function switchFilter(element) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const customSelect = document.getElementById("customSelectFilter");
-  const selected = customSelect.querySelector(".selected");
-  const options = customSelect.querySelector(".options");
-  const optionItems = options.querySelectorAll(".option");
+  document.querySelectorAll('.custom-select').forEach((element) => {
+    customSelect(element);
+  });
+});
+
+function customSelect(element) {
+  let customSelect = element;
+  let selected = customSelect.querySelector(".selected");
+  let options = customSelect.querySelector(".options");
+  let optionItems = options.querySelectorAll(".option");
 
   // Toggle options display
   selected.addEventListener("click", () => {
-      customSelect.classList.toggle("open");
+    customSelect.classList.toggle("open");
   });
 
   // Handle option selection
   optionItems.forEach(option => {
-      option.addEventListener("click", () => {
-          const value = option.getAttribute("data-value");
-          const text = option.textContent;
+    option.addEventListener("click", () => {
+      const value = option.getAttribute("data-value");
+      const text = option.textContent;
 
-          // Update selected value
-          selected.querySelector("span").textContent = text;
+      // Update selected value
+      selected.querySelector("span").textContent = text;
 
-          // Remove active class from all options and set it to selected one
-          optionItems.forEach(opt => opt.classList.remove("active"));
-          option.classList.add("active");
+      // Remove active class from all options and set it to selected one
+      optionItems.forEach(opt => opt.classList.remove("active"));
+      option.classList.add("active");
 
-          // Close dropdown
-          customSelect.classList.remove("open");
+      // Close dropdown
+      customSelect.classList.remove("open");
 
-          // If needed, send the value to your form or backend
-          console.log("Selected value:", value);
-      });
+      // If needed, send the value to your form or backend
+      console.log("Selected value:", value);
+    });
   });
 
   // Close dropdown when clicking outside
   document.addEventListener("click", (e) => {
-      if (!customSelect.contains(e.target)) {
-          customSelect.classList.remove("open");
-      }
+    if (!customSelect.contains(e.target)) {
+      customSelect.classList.remove("open");
+    }
   });
-});
+}
+
 
 async function writeProjects() {
-  console.log('writeProjects');
- }
+  try {
+    const response = await fetch(pathJson + 'projects.json');
+    const data = await response.json();
+
+    const listProjects = document.getElementById('listProjects');
+    listProjects.innerHTML = ''; // Clear existing projects
+
+    for (const type in data.projects) {
+      if (data.projects.hasOwnProperty(type)) {
+        // const typeHeader = document.createElement('h2');
+        // typeHeader.textContent = type;
+        // listProjects.appendChild(typeHeader);
+
+        data.projects[type].forEach(project => {
+          const projectDiv = document.createElement('div');
+          projectDiv.classList.add('project');
+          projectDiv.setAttribute('onclick', 'zoomProjectPhone(this)');
+
+          const descProjectDiv = document.createElement('div');
+          descProjectDiv.classList.add('descProject');
+
+          const descProjectHeaderDiv = document.createElement('div');
+          descProjectHeaderDiv.classList.add('descProjectHeader');
+
+          const projectTitle = document.createElement('h4');
+          projectTitle.textContent = project.title;
+
+          const xmarkSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+          xmarkSvg.setAttribute('viewBox', '0 0 384 512');
+          xmarkSvg.classList.add('xmark');
+          xmarkSvg.setAttribute('onclick', 'xmarkClick()');
+
+          const xmarkPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          xmarkPath.setAttribute('fill', '#ffffff');
+          xmarkPath.setAttribute('d', 'M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z');
+
+          xmarkSvg.appendChild(xmarkPath);
+
+          descProjectHeaderDiv.appendChild(projectTitle);
+          descProjectHeaderDiv.appendChild(xmarkSvg);
+
+          const resumeProjectDiv = document.createElement('div');
+          resumeProjectDiv.classList.add('resumeProject');
+
+          const projectDescription = document.createElement('p');
+          projectDescription.textContent = project.description;
+
+          const projectTechnos = document.createElement('p');
+          projectTechnos.classList.add('technos');
+          console.log(project.technologies.length);
+          projectTechnos.innerHTML = project.technologies.length!=0?`<span>[${project.technologies.join(', ')}]</span>`:"<span>Projet non technique</span>";
+
+          resumeProjectDiv.appendChild(projectDescription);
+          resumeProjectDiv.appendChild(projectTechnos);
+
+          const contextProject = document.createElement('p');
+          contextProject.classList.add('contextProject');
+          contextProject.textContent = project.context;
+
+          descProjectDiv.appendChild(descProjectHeaderDiv);
+          descProjectDiv.appendChild(resumeProjectDiv);
+          descProjectDiv.appendChild(contextProject);
+
+          projectDiv.appendChild(descProjectDiv);
+          projectDiv.style.backgroundImage = `url(${project.image})`;
+          listProjects.appendChild(projectDiv);
+        });
+      }
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
 
 
 
@@ -378,7 +418,8 @@ async function writeProjects() {
 
 var xmarkClicked = false;
 function zoomProjectPhone(element) {
-  if (window.innerWidth > 768) {
+  console.log('zoomProjectPhone');
+  if (window.innerWidth < 768) {
     if (xmarkClicked) {
       unZoomProjectPhone(element);
       xmarkClicked = false;
@@ -391,20 +432,68 @@ function zoomProjectPhone(element) {
       element.querySelector('.descProject').style.height = '25rem';
       element.querySelector('.resumeProject').style.height = 'auto';
       element.querySelector('.xmark').style.display = 'block';
+      // setTimeout(() => {
+      //   window.scrollTo({
+      //     top: element.offsetTop - 160,
+      //     behavior: 'smooth'
+      //   });
+      // }, 100); // Exécuter après les instructions précédentes
+
     }
   }
 }
 
 function unZoomProjectPhone(element) {
-  element.style.width = '45%';
+  element.style.width = '47.5%';
   element.querySelector('.descProject').style.marginTop = '5rem';
   element.querySelector('.descProject').style.height = '7rem';
   element.querySelector('.resumeProject').style.height = '0rem';
   element.querySelector('.xmark').style.display = 'none';
+}
+function unZoomProjectPC(element) {
+  element.style.width = '24.1%';
+  element.querySelector('.descProject').removeAttribute('style');
+  element.querySelector('.resumeProject').removeAttribute('style');
+  element.querySelector('.xmark').removeAttribute('style');
 }
 
 function xmarkClick() {
   xmarkClicked = true;
 }
 
+let winSize = window.innerWidth;
+window.addEventListener('resize', function () {
+
+  if (winSize < 768 && window.innerWidth >= 768) {
+    console.log('PC');
+    document.querySelectorAll('.project').forEach((element) => {
+      unZoomProjectPC(element);
+    });
+  } else if (winSize >= 768 && window.innerWidth < 768) {
+    document.querySelectorAll('.project').forEach((element) => {
+      unZoomProjectPhone(element);
+    });
+  }
+  winSize = window.innerWidth;
+
+});
+
+
+function openProject(element) {
+  if (element.classList.contains("open-project")) {
+    element.classList.remove("open-project");
+  } else {
+    element.classList.add("open-project");
+  }
+}
+document.addEventListener('DOMContentLoaded', function () {
+  writeProjects().then(() => {
+    document.querySelectorAll('.project').forEach((element) => {
+      element.classList.remove("open-project");
+      element.addEventListener('click', function () {
+        openProject(element);
+      });
+    });
+  });
+});
 

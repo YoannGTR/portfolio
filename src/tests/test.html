@@ -1,88 +1,39 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bouton avec menu déroulant progressif</title>
-    <style>
-        /* Style pour le bouton */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-btn {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        /* Conteneur de la liste déroulante */
-        .dropdown-content {
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            overflow: hidden; /* Cache le débordement */
-            max-height: 0; /* Cache le contenu par défaut */
-            opacity: 1; /* Invisible par défaut */
-            transition: max-height 0.4s ease, opacity 0.4s ease; /* Animation douce */
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-            z-index: 1;
-        }
-
-        /* Style des éléments de la liste */
-        .dropdown-content a {
-            color: black;
-            padding: 10px 15px;
-            text-decoration: none;
-            display: block;
-            font-size: 14px;
-        }
-
-        /* Change la couleur au survol */
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        /* Classe pour afficher la liste déroulante */
-        .dropdown-content.show {
-            max-height: 200px; /* Ajuste la hauteur selon le contenu */
-            opacity: 1; /* Rend la liste visible */
-        }
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <main>
 
-<div class="dropdown">
-    <button class="dropdown-btn" onclick="toggleDropdown()">Afficher les mots-clés</button>
-    <div class="dropdown-content" id="dropdownContent">
-        <a href="#">Mot-clé 1</a>
-        <a href="#">Mot-clé 2</a>
-        <a href="#">Mot-clé 3</a>
-        <a href="#">Mot-clé 4</a>
-    </div>
-</div>
-
-<script>
-    function toggleDropdown() {
-        const dropdown = document.getElementById("dropdownContent");
-        dropdown.classList.toggle("show");
-    }
-
-    // Ferme la liste déroulante si l'utilisateur clique en dehors
-    window.addEventListener("click", function(event) {
-        const dropdown = document.getElementById("dropdownContent");
-        const button = document.querySelector(".dropdown-btn");
-        if (!dropdown.contains(event.target) && !button.contains(event.target)) {
-            dropdown.classList.remove("show");
-        }
-    });
-</script>
-
+        <div id="filters">
+            <div class="custom-select" id="customSelectFilter">
+                <span class="selected">
+                    <span>
+                        Touts les projets
+                    </span>
+                    <div class="arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-arrow">
+                            <path fill="#ffffff"
+                                d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                        </svg>
+                    </div>
+                </span>
+                <ul class="options">
+                    <li data-value="all" class="option active">Touts les projets</li>
+                    <li data-value="Favorites" class="option">Favoris</li>
+                    <li data-value="Personal" class="option">Personnels</li>
+                    <li data-value="BUT" class="option">En BUT</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -163,62 +163,74 @@
     </section>
     <section id="project">
       <h2>Projects</h2>
-      <div id="filter">
-        <button class="selected" onclick="switchFilter(this)">Tous les projets</button>
-        <button onclick="switchFilter(this)">Favoris</button>
-        <button onclick="switchFilter(this)">Récents</button>
-        <button onclick="switchFilter(this)">Personnels</button>
-        <button onclick="switchFilter(this)">En BUT</button>
-      </div>
-      <div id="filters2">
-        La liste de <select name="selectFilter" id="selectFilter">
-          <option value="all">Touts les projets</option>
-          <option value="Favorites">Favoris</option>
-          <option value="Personal">Personnels</option>
-          <option value="BUT">En BUT</option>
-        </select>
 
-      </div>
       <div id="filters">
-        <p>
-          La liste de
-        </p>
-        <div class="custom-select" id="customSelectFilter">
-          <span class="selected">
-            <span>
-              Touts les projets
+        <div class="filter">
+          <p>
+            Type :
+          </p>
+          <div class="custom-select" id="customSelectFilter">
+            <span class="selected">
+              <span>
+                Tous
+              </span>
+              <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-arrow">
+                  <path fill="#ffffff"
+                    d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                </svg>
+              </div>
             </span>
-            <div class="arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-arrow">
-                <path fill="#ffffff"
-                  d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-              </svg>
-            </div>
-          </span>
-          <ul class="options">
-            <li data-value="all" class="option active">Touts les projets</li>
-            <li data-value="Favorites" class="option">Favoris</li>
-            <li data-value="Personal" class="option">Personnels</li>
-            <li data-value="BUT" class="option">En BUT</li>
-          </ul>
+            <ul class="options">
+              <li data-value="all" class="option active">Tous</li>
+              <li data-value="Favorites" class="option">Favoris</li>
+              <li data-value="Personal" class="option">Personnels</li>
+              <li data-value="BUT" class="option">En BUT</li>
+            </ul>
+          </div>
         </div>
-        <p>triés par</p>
-        <div class="custom-select" id="customSelectFilter">
-          <span class="selected">
-            <span>
-              Les plus récents
+        <div class="filter">
+          <p>Ordre : </p>
+          <div class="custom-select">
+            <span class="selected">
+              <span>
+                Les plus récents
+              </span>
+              <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-arrow">
+                  <path fill="#ffffff"
+                    d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                </svg>
+              </div>
             </span>
-            <div class="arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-arrow">
-                <path fill="#ffffff"
-                  d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-              </svg>
-            </div>
-          </span>
-          <ul class="options">
-            <li data-value="Lastests" class="option active">Les plus récents</li>
-            <li data-value="Oldests" class="option">Les plus anciens</li>
-          </ul>
+            <ul class="options">
+              <li data-value="Lastests" class="option active">Les plus récents</li>
+              <li data-value="Oldests" class="option">Les plus anciens</li>
+            </ul>
+          </div>
+        </div>
+        <div class="filter">
+          <p>Domaine : </p>
+          <div class="custom-select">
+            <span class="selected">
+              <span>
+                Tous
+              </span>
+              <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-arrow">
+                  <path fill="#ffffff"
+                    d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                </svg>
+              </div>
+            </span>
+            <ul class="options">
+              <li data-value="all" class="option active">Tous</li>
+              <li data-value="system" class="option">Système</li>
+              <li data-value="web" class="option">Web</li>
+              <li data-value="mobile" class="option">Mobile</li>
+              <li data-value="software" class="option">Logiciel</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -228,127 +240,18 @@
         <div class="project" onclick="zoomProjectPhone(this)">
           <div class="descProject">
             <div class="descProjectHeader">
-              <h4>Site de réservation</h4>
+              <h4>Puissance 4</h4>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onclick="xmarkClick()" class="xmark">
                 <path fill="#ffffff"
                   d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
               </svg>
             </div>
-            <p class="resumeProject">ce travail a été réalise en jjzoidfnuize ezjfkne zeifb zejfb zejfb efe rej gerverj
-              ger gv ergreg d vr egvergvdre v erg d v er gvergreg regdger regerg ef</p>
-            <p class="contextProject">BUT Informatique 3e année</p>
-          </div>
-        </div>
-        <div class="project" onclick="zoomProjectPhone(this)">
-          <div class="descProject">
-            <div class="descProjectHeader">
-              <h4>Site de réservation</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onclick="xmarkClick()" class="xmark">
-                <path fill="#ffffff"
-                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-              </svg>
+            <div class="resumeProject">
+              <p>Création d'un Puissance 4 exécutable et jouable dans un terminal. Ce jeu pouvait être joué à 2, chacun
+                son tour, directement dans le même terminal. <br></p>
+              <p class="technos"><span>[C, Doxygen]</span></p>
             </div>
-            <p class="resumeProject">ce travail a été réalise en jjzoidfnuize ezjfkne zeifb zejfb zejfb efe rej gerverj
-              ger gv ergreg d vr egvergvdre v erg d v er gvergreg regdger regerg ef</p>
-            <p class="contextProject">BUT Informatique 3e année</p>
-          </div>
-        </div>
-        <div class="project" onclick="zoomProjectPhone(this)">
-          <div class="descProject">
-            <div class="descProjectHeader">
-              <h4>Site de réservation</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onclick="xmarkClick()" class="xmark">
-                <path fill="#ffffff"
-                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-              </svg>
-            </div>
-            <p class="resumeProject">ce travail a été réalise en jjzoidfnuize ezjfkne zeifb zejfb zejfb efe rej gerverj
-              ger gv ergreg d vr egvergvdre v erg d v er gvergreg regdger regerg ef</p>
-            <p class="contextProject">BUT Informatique 3e année</p>
-          </div>
-        </div>
-        <div class="project" onclick="zoomProjectPhone(this)">
-          <div class="descProject">
-            <div class="descProjectHeader">
-              <h4>Site de réservation</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onclick="xmarkClick()" class="xmark">
-                <path fill="#ffffff"
-                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-              </svg>
-            </div>
-            <p class="resumeProject">ce travail a été réalise en jjzoidfnuize ezjfkne zeifb zejfb zejfb efe rej gerverj
-              ger gv ergreg d vr egvergvdre v erg d v er gvergreg regdger regerg ef</p>
-            <p class="contextProject">BUT Informatique 3e année</p>
-          </div>
-        </div>
-        <div class="project" onclick="zoomProjectPhone(this)">
-          <div class="descProject">
-            <div class="descProjectHeader">
-              <h4>Site de réservation</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onclick="xmarkClick()" class="xmark">
-                <path fill="#ffffff"
-                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-              </svg>
-            </div>
-            <p class="resumeProject">ce travail a été réalise en jjzoidfnuize ezjfkne zeifb zejfb zejfb efe rej gerverj
-              ger gv ergreg d vr egvergvdre v erg d v er gvergreg regdger regerg ef</p>
-            <p class="contextProject">BUT Informatique 3e année</p>
-          </div>
-        </div>
-        <div class="project" onclick="zoomProjectPhone(this)">
-          <div class="descProject">
-            <div class="descProjectHeader">
-              <h4>Site de réservation</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onclick="xmarkClick()" class="xmark">
-                <path fill="#ffffff"
-                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-              </svg>
-            </div>
-            <p class="resumeProject">ce travail a été réalise en jjzoidfnuize ezjfkne zeifb zejfb zejfb efe rej gerverj
-              ger gv ergreg d vr egvergvdre v erg d v er gvergreg regdger regerg ef</p>
-            <p class="contextProject">BUT Informatique 3e année</p>
-          </div>
-        </div>
-        <div class="project" onclick="zoomProjectPhone(this)">
-          <div class="descProject">
-            <div class="descProjectHeader">
-              <h4>Site de réservation</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onclick="xmarkClick()" class="xmark">
-                <path fill="#ffffff"
-                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-              </svg>
-            </div>
-            <p class="resumeProject">ce travail a été réalise en jjzoidfnuize ezjfkne zeifb zejfb zejfb efe rej gerverj
-              ger gv ergreg d vr egvergvdre v erg d v er gvergreg regdger regerg ef</p>
-            <p class="contextProject">BUT Informatique 3e année</p>
-          </div>
-        </div>
-        <div class="project" onclick="zoomProjectPhone(this)">
-          <div class="descProject">
-            <div class="descProjectHeader">
-              <h4>Site de réservation</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onclick="xmarkClick()" class="xmark">
-                <path fill="#ffffff"
-                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-              </svg>
-            </div>
-            <p class="resumeProject">ce travail a été réalise en jjzoidfnuize ezjfkne zeifb zejfb zejfb efe rej gerverj
-              ger gv ergreg d vr egvergvdre v erg d v er gvergreg regdger regerg ef</p>
-            <p class="contextProject">BUT Informatique 3e année</p>
-          </div>
-        </div>
-        <div class="project" onclick="zoomProjectPhone(this)">
-          <div class="descProject">
-            <div class="descProjectHeader">
-              <h4>Site de réservation</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onclick="xmarkClick()" class="xmark">
-                <path fill="#ffffff"
-                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-              </svg>
-            </div>
-            <p class="resumeProject">ce travail a été réalise en jjzoidfnuize ezjfkne zeifb zejfb zejfb efe rej gerverj
-              ger gv ergreg d vr egvergvdre v erg d v er gvergreg regdger regerg ef</p>
-            <p class="contextProject">BUT Informatique 3e année</p>
+            <p class="contextProject">BUT Informatique 1e année</p>
           </div>
         </div>
 

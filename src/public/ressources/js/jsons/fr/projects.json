@@ -1,0 +1,223 @@
+{
+    "projects": {
+        "BUT informatique": [
+            {
+                "id": 1,
+                "title": "Puissance 4",
+                "description": "Jeu du Puissance 4 exécutable et jouable dans un terminal, à 2 joueurs ou contre un algorithme.",
+                "technologies": [
+                    "C",
+                    "DOXYGEN"
+                ],
+                "context": "BUT informatique, 1e année",
+                "compétence": [
+                    "1.1",
+                    "1.2"
+                ],
+                "date": "Octobre 2022",
+                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.01_Puissance4",
+                "image": "./ressources/assets/images/projets/puissance4.png"
+            },
+            {
+                "id": 2,
+                "title": "Logiciel de gestion d'un hôtel",
+                "description": "Logiciel de gestion d'un hôtel, avec une interface utilisable par le personnel de l'hôtel",
+                "technologies": [
+                    "Java",
+                    "JavaXF"
+                ],
+                "context": "BUT informatique, 1e année",
+                "compétence": [
+                    "2.1",
+                    "2.5"
+                ],
+                "date": "Mai 2023",
+                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.01_LogicielHotel",
+                "image": "./ressources/assets/images/projets/hotel.png"
+            },
+            {
+                "id": 3,
+                "title": "Tour du cavalier",
+                "description": "Algorithme en backtracking capable de donner un tour du cavalier, s'il existe, en fonction de la position de départ et de la taille de l'échiquier.",
+                "technologies": [
+                    "Python"
+                ],
+                "context": "BUT informatique, 1e année",
+                "compétence": [
+                    "2.2"
+                ],
+                "date": "Avril 2023",
+                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.02_TourDuCavalier",
+                "image": "./ressources/assets/images/projets/cavalier.png"
+            },
+            {
+                "id": 4,
+                "title": "Environnement Docker",
+                "description": "Evnvironnement docker permettant de générer un fichier PDF à partir d'un document texte rempli par l'utilisateur.",
+                "technologies": [
+                    "Bash",
+                    "HTML/CSS",
+                    "PHP"
+                ],
+                "context": "BUT informatique, 1e année",
+                "compétence": [
+                    "1.3"
+                ],
+                "date": "Janvier 2023",
+                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.03_Docker",
+                "image": "./ressources/assets/images/projets/docker.png"
+            },
+            {
+                "id": 5,
+                "title": "Logiciel de gestion d'un hôtel",
+                "description": "Infrastructure et services nécessaires au développement d'un site web grâce à un serveur apache",
+                "technologies": [
+                    "SQL",
+                    "Bash",
+                    "PHP"
+                ],
+                "context": "BUT informatique, 1e année",
+                "compétence": [
+                    "2.3"
+                ],
+                "date": "Juin 2023",
+                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.03_Reseau",
+                "image": "./ressources/assets/images/projets/apache2.jpg"
+            },
+            {
+                "id": 6,
+                "title": "BDD Transmusicales",
+                "description": "Structure de base de donnée avec les données des transmusicales",
+                "technologies": [
+                    "SQL"
+                ],
+                "context": "BUT informatique, 1e année",
+                "compétence": [
+                    "1.4"
+                ],
+                "date": "Décembre 2022",
+                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.04_TransmusicalesBDD",
+                "image": "./ressources/assets/images/projets/transmusicales.png"
+            },
+            {
+                "id": 7,
+                "title": "BDD Parcoursup",
+                "description": "Structure de base de donnée avec les données de Parcoursup",
+                "technologies": [
+                    "SQL"
+                ],
+                "context": "BUT informatique, 1e année",
+                "compétence": [
+                    "2.4"
+                ],
+                "date": "Mai 2023",
+                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.04_ParcoursupBDD",
+                "image": "./ressources/assets/images/projets/parcoursup.jpg"
+            },
+            {
+                "id": 8,
+                "title": "Sport KOH",
+                "description": "Site vitrine permettant de pouvoir consulter les séjours proposés par l'entreprise fictive Sport KOH.",
+                "technologies": [
+                    "HTML/CSS",
+                    "JS"
+                ],
+                "context": "BUT informatique, 1e année",
+                "compétence": [
+                    "1.5"
+                ],
+                "date": "Novembre 2022",
+                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.05_SportKOH",
+                "image": "./ressources/assets/images/projets/logo.png"
+            },
+            {
+                "id": 9,
+                "title": "RSE de Heineken",
+                "description": "Étude de la RSE de heineken et tableau des caractéristiques de l'entreprise",
+                "technologies": [],
+                "context": "BUT informatique, 1e année",
+                "compétence": [
+                    "1.6"
+                ],
+                "date": "Octobre 2022",
+                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.06_RSE",
+                "image": "./ressources/assets/images/projets/heineken.png"
+            },
+            {
+                "id": 10,
+                "title": "Team building",
+                "description": "Evenement de team buiding fictif pour la société Océanopolis, avec son flyers et son film évènementiel.",
+                "technologies": [],
+                "context": "BUT informatique, 1e année",
+                "compétence": [
+                    "1.6"
+                ],
+                "date": "Octobre 2022",
+                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.06_TeamBuilding",
+                "image": "./ressources/assets/images/projets/Océanopolis.jpg"
+            },
+            {
+                "id": 10,
+                "title": "Allaizh breizh",
+                "description": "Site de réservation de séjours en Bretagne, avec un backoffice pour les administrateurs. Le chemin utilisateur était complet, de l'accueil à la validation de la réservation.",
+                "technologies": [
+                    "HTML/CSS",
+                    "JS",
+                    "PHP",
+                    "SQL",
+                    "Bash",
+                    "Docker",
+                    "C"
+                ],
+                "context": "BUT informatique, 2e année",
+                "compétence": [
+                    "3.1",
+                    "3.2",
+                    "3.3",
+                    "3.4",
+                    "3.5",
+                    "3.6",
+                    "4.1",
+                    "4.2",
+                    "4.3",
+                    "4.4",
+                    "4.5",
+                    "4.6"
+                ],
+                "date": "Octobre 2022",
+                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.06_TeamBuilding",
+                "image": "./ressources/assets/images/projets/soon.jpg"
+            }
+        ],
+        "Perso": [
+            {
+                "id": 100,
+                "title": "Portfolio v2 (actuel)",
+                "description": "Création de ce protfolio",
+                "technologies": [
+                    "HTML/CSS",
+                    "JS",
+                    "Docker"
+                ],
+                "context": "Personnel, Fin 2024",
+                "date": "Décembre 2024",
+                "link": "https://github.com/gomuchii/portfolio",
+                "image": "./ressources/assets/images/projets/portfolio_v2.png"
+            },
+            {
+                "id": 101,
+                "title": "Portfolio v1",
+                "description": "Mon premier portfolio",
+                "technologies": [
+                    "HTML/CSS",
+                    "JS",
+                    "Docker"
+                ],
+                "context": "Personnel, Mai 2023",
+                "date": "Mai 2023",
+                "link": "https://github.com/gomuchii/portfolio",
+                "image": "./ressources/assets/images/projets/portfolio_v1.png"
+            }
+        ]
+    }
+}

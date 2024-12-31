@@ -1,86 +1,39 @@
-const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        const reduc = 0.60;
-        const triangleSize = 80;
-        const halfSize = triangleSize*reduc;
-        const rows = Math.ceil(canvas.height / triangleSize)*2 + 1;
-        const cols = Math.ceil(canvas.width / triangleSize)*3 + 1;
+document.addEventListener("DOMContentLoaded", function () {
+    const customSelect = document.getElementById("customSelectFilter");
+    const selected = customSelect.querySelector(".selected");
+    const options = customSelect.querySelector(".options");
+    const optionItems = options.querySelectorAll(".option");
 
-        const triangles = [];
+    // Toggle options display
+    selected.addEventListener("click", () => {
+        customSelect.classList.toggle("open");
+    });
 
-        function createTriangles() {
-            let delay = 0;
-            for (let row = 0; row < rows; row++) {
-                for (let col = 0; col < cols; col++) {
-                    let x = col * halfSize;
-                    let y = row * halfSize/reduc;
-                    
-                    // Diminuer l'amplitude des nuances de gris
-                    let grayValue = Math.floor(Math.random() * 30) + 220; // Nuances de gris entre 100 et 200
+    // Handle option selection
+    optionItems.forEach(option => {
+        option.addEventListener("click", () => {
+            const value = option.getAttribute("data-value");
+            const text = option.textContent;
 
-                    // Déterminer si le triangle pointe vers le haut ou le bas
-                    let pointingUp = (row + col) % 2 === 0;
+            // Update selected value
+            selected.querySelector("span").textContent = text;
 
-                    triangles.push({ x, y, grayValue, pointingUp, opacity: 0, delay });
-                    
-                    // Augmenter le délai pour chaque triangle
-                    delay += 0.5; // Augmentez cette valeur pour ralentir ou accélérer l'apparition des triangles
-                }
-            }
-        }
+            // Remove active class from all options and set it to selected one
+            optionItems.forEach(opt => opt.classList.remove("active"));
+            option.classList.add("active");
 
-        function drawTriangle(x, y, size, color, pointingUp, opacity) {
-            ctx.beginPath();
-            if (pointingUp) {
-                ctx.moveTo(x, y);
-                ctx.lineTo(x + halfSize, y + size);
-                ctx.lineTo(x - halfSize, y + size);
-            } else {
-                ctx.moveTo(x, y + size);
-                ctx.lineTo(x + halfSize, y);
-                ctx.lineTo(x - halfSize, y);
-            }
-            ctx.closePath();
-            ctx.fillStyle = `rgba(${color}, ${color}, ${color}, ${opacity})`;
-            ctx.fill();
-        }
+            // Close dropdown
+            customSelect.classList.remove("open");
 
-        function animateTriangles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            let allStatic = true;
-            let currentTime = Date.now();
-
-            triangles.forEach(triangle => {
-                // Vérifier si le temps de delay est passé pour ce triangle
-                if (currentTime >= triangle.startTime + triangle.delay) {
-                    if (triangle.opacity < 1) {
-                        triangle.opacity += 0.02;
-                        allStatic = false;
-                    }
-                    drawTriangle(triangle.x, triangle.y, triangleSize, triangle.grayValue, triangle.pointingUp, triangle.opacity);
-                }
-            });
-
-            if (!allStatic) {
-                requestAnimationFrame(animateTriangles);
-            }
-        }
-
-        createTriangles();
-
-        // Définir le temps de départ pour chaque triangle
-        triangles.forEach(triangle => {
-            triangle.startTime = Date.now();
+            // If needed, send the value to your form or backend
+            console.log("Selected value:", value);
         });
+    });
 
-        animateTriangles();
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            triangles.length = 0;
-            createTriangles();
-            animateTriangles();
-        });
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!customSelect.contains(e.target)) {
+            customSelect.classList.remove("open");
+        }
+    });
+});
