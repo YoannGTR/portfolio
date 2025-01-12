@@ -157,3 +157,34 @@
     font-family: var(--jetbrainBold);
     cursor: default;
 }
+
+
+/* Styles pour le conteneur */
+.block {
+  position: relative; /* Nécessaire pour positionner le SVG en absolu */
+  width: 100%; /* Largeur du bloc */
+  height: 300px; /* Ajustez cette hauteur selon vos besoins */
+  /* background: #f4f4f4; Optionnel : couleur de fond pour visualisation */
+  text-align: center; /* Centre le texte horizontalement */
+  overflow: hidden; /* Empêche les débordements */
+}
+
+/* Styles pour le SVG */
+.background-svg {
+  position: absolute;
+  top: 0;
+  left: 50%; /* Positionne horizontalement au centre */
+  /* transform: translateX(-50%); Recentre le SVG en tenant compte de sa largeur */
+  width: 1rem; /* Laisse la largeur s'ajuster automatiquement */
+  height: 100%; /* Étire le SVG pour qu'il remplisse la hauteur du conteneur */
+  z-index: -1; /* Place le SVG derrière le texte */
+  opacity: 1; /* Optionnel : ajuste l'opacité pour un effet discret */
+}
+
+/* Styles pour le texte */
+.text {
+  position: relative; /* Permet de garder le texte au-dessus du SVG */
+  font-size: 1.5em; /* Taille de la police */
+  color: #333; /* Couleur du texte */
+  line-height: 300px; /* Centrer verticalement le texte (égal à la hauteur du bloc) */
+}
