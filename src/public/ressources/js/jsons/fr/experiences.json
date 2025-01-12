@@ -11,7 +11,7 @@
       "mention": "Mention Bien",
       "dateBegin": "2019",
       "dateEnd": "2022",
-      "picture": "./ressources/assets/images/logo.png"
+      "picture": "./ressources/assets/images/Bac.png"
     },
     {
       "category": "job",
@@ -21,7 +21,7 @@
       "dateBegin": "Juillet 2022",
       "dateEnd": "",
       "description": "Service en salle, accueil des clients, service des plats et boissons.",
-      "picture": "./ressources/assets/images/logo.png"
+      "picture": "./ressources/assets/images/Le_Retro.png"
     },
     {
       "category": "study",
@@ -30,7 +30,7 @@
       "mention": "Mention Bien",
       "dateBegin":"2022",
       "dateEnd":"2025",
-      "picture": "./ressources/assets/images/logo.png"
+      "picture": "./ressources/assets/images/BUT.png"
     },
     {
       "category": "job",
@@ -40,7 +40,7 @@
       "dateBegin": "2023",
       "dateEnd": "2025",
       "description": "Développement d'un logiciel",
-      "picture": "./ressources/assets/images/logo.png"
+      "picture": "./ressources/assets/images/open.jpg"
     }
   ]
 }

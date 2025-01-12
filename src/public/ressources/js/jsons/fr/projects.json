@@ -14,7 +14,9 @@
                     "1.1",
                     "1.2"
                 ],
-                "date": "Octobre 2022",
+                "date": "2022-10-01",
+                "domain": ["system", "software"],
+                "type": ["BUT"],
                 "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.01_Puissance4",
                 "image": "./ressources/assets/images/projets/puissance4.png"
             },
@@ -31,7 +33,9 @@
                     "2.1",
                     "2.5"
                 ],
-                "date": "Mai 2023",
+                "date": "2023-05-01",
+                "domain": ["software"],
+                "type": ["BUT"],
                 "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.01_LogicielHotel",
                 "image": "./ressources/assets/images/projets/hotel.png"
             },
@@ -46,7 +50,9 @@
                 "compétence": [
                     "2.2"
                 ],
-                "date": "Avril 2023",
+                "date": "2023-04-01",
+                "domain": ["software", "algorithm"],
+                "type": ["BUT"],
                 "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.02_TourDuCavalier",
                 "image": "./ressources/assets/images/projets/cavalier.png"
             },
@@ -63,13 +69,15 @@
                 "compétence": [
                     "1.3"
                 ],
-                "date": "Janvier 2023",
+                "date": "2023-01-01",
+                "domain": ["system"],
+                "type": ["BUT"],
                 "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.03_Docker",
                 "image": "./ressources/assets/images/projets/docker.png"
             },
             {
                 "id": 5,
-                "title": "Logiciel de gestion d'un hôtel",
+                "title": "Serveur Apache",
                 "description": "Infrastructure et services nécessaires au développement d'un site web grâce à un serveur apache",
                 "technologies": [
                     "SQL",
@@ -80,7 +88,9 @@
                 "compétence": [
                     "2.3"
                 ],
-                "date": "Juin 2023",
+                "date": "2023-06-01",
+                "domain": ["system", "web"],
+                "type": ["BUT"],
                 "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.03_Reseau",
                 "image": "./ressources/assets/images/projets/apache2.jpg"
             },
@@ -95,7 +105,9 @@
                 "compétence": [
                     "1.4"
                 ],
-                "date": "Décembre 2022",
+                "date": "2022-12-01",
+                "domain": ["database"],
+                "type": ["BUT"],
                 "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.04_TransmusicalesBDD",
                 "image": "./ressources/assets/images/projets/transmusicales.png"
             },
@@ -110,7 +122,9 @@
                 "compétence": [
                     "2.4"
                 ],
-                "date": "Mai 2023",
+                "date": "2023-05-01",
+                "domain": ["database"],
+                "type": ["BUT"],
                 "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.04_ParcoursupBDD",
                 "image": "./ressources/assets/images/projets/parcoursup.jpg"
             },
@@ -126,7 +140,9 @@
                 "compétence": [
                     "1.5"
                 ],
-                "date": "Novembre 2022",
+                "date": "2022-11-01",
+                "domain": ["web"],
+                "type": ["BUT"],
                 "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.05_SportKOH",
                 "image": "./ressources/assets/images/projets/logo.png"
             },
@@ -139,7 +155,9 @@
                 "compétence": [
                     "1.6"
                 ],
-                "date": "Octobre 2022",
+                "date": "2022-10-01",
+                "domain": ["document"],
+                "type": ["BUT"],
                 "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.06_RSE",
                 "image": "./ressources/assets/images/projets/heineken.png"
             },
@@ -152,7 +170,9 @@
                 "compétence": [
                     "1.6"
                 ],
-                "date": "Octobre 2022",
+                "date": "2022-10-01",
+                "domain": ["document"],
+                "type": ["BUT"],
                 "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.06_TeamBuilding",
                 "image": "./ressources/assets/images/projets/Océanopolis.jpg"
             },
@@ -184,7 +204,9 @@
                     "4.5",
                     "4.6"
                 ],
-                "date": "Octobre 2022",
+                "date": "2024-03-01",
+                "domain": ["web", "system", "database"],
+                "type": ["BUT", "favorite"],
                 "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.06_TeamBuilding",
                 "image": "./ressources/assets/images/projets/soon.jpg"
             }
@@ -193,14 +215,16 @@
             {
                 "id": 100,
                 "title": "Portfolio v2 (actuel)",
-                "description": "Création de ce protfolio",
+                "description": "Création de ce protfolio.",
                 "technologies": [
                     "HTML/CSS",
                     "JS",
                     "Docker"
                 ],
                 "context": "Personnel, Fin 2024",
-                "date": "Décembre 2024",
+                "date": "2024-12-01",
+                "domain": ["web", "system", "database"],
+                "type": ["favorite", "personal"],
                 "link": "https://github.com/gomuchii/portfolio",
                 "image": "./ressources/assets/images/projets/portfolio_v2.png"
             },
@@ -214,10 +238,47 @@
                     "Docker"
                 ],
                 "context": "Personnel, Mai 2023",
-                "date": "Mai 2023",
+                "date": "2023-05-01",
+                "domain": ["web"],
+                "type": ["favorite", "personal"],
                 "link": "https://github.com/gomuchii/portfolio",
                 "image": "./ressources/assets/images/projets/portfolio_v1.png"
             }
+        ],
+        "Professionnel": [
+            {
+                "id": 200,
+                "title": "Disserto",
+                "description": "Suite de logiciel permettant le développement et l'execution de service interactifs (DTMF, mots isolés ou langage naturel) pour le client Orange. Ce service est notamment utilisé par le numéro d'aide d'Orange (39 00).",
+                "technologies": [
+                    "Java",
+                    "Java Swing"
+                ],
+                "context": "Alternance, Open, 2024",
+                "date": "2024-08-01",
+                "domain": ["software"],
+                "type": ["favorite", "professional"],
+                "link": "https://github.com/gomuchii/disserto",
+                "image": "./ressources/assets/images/projets/Disserto.png"
+            },
+            {
+                "id": 201,
+                "title": "Talia",
+                "description": "Création d'un serveur et d'un client s'envoyant et analysant des requêtes netconf afin de simuler des équipements distants d'Orange.",
+                "technologies": [
+                    "Java",
+                    "XML",
+                    "JSON",
+                    "Netconf"
+                ],
+                "context": "Alternance, Open, 2024",
+                "date": "2023-10-01",
+                "domain": ["software", "system"],
+                "type": ["favorite", "professional"],
+                "link": "https://github.com/gomuchii/talia",
+                "image": "./ressources/assets/images/projets/talia.png"
+            }
+
         ]
     }
 }
