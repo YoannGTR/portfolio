@@ -881,7 +881,7 @@ section {
   }
   #listExperience {
     position: relative;
-    grid-template-rows: 1fr fit-content(100%) 1fr;
+    grid-template-columns: 1fr fit-content(100%) 1fr;
     gap: 2rem 2rem;
     /* width: auto; */
   }
