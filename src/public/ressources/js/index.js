@@ -294,6 +294,8 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.custom-select').forEach((element) => {
     customSelect(element);
   });
+  document.querySelector('.filterCompetence').style.display = 'none';
+  document.querySelector('#displayComp').style.display = 'none';
   buttonSort();
   filterProjects();
 });
@@ -329,6 +331,16 @@ function customSelect(element) {
       customSelect.querySelector('.selected').style.backgroundColor = 'white';
       selected.firstElementChild.style.color = '#5A13B1';
 
+      if (customSelect.id == 'filterType') {
+        if (value == 'BUT') {
+          document.querySelector('.filterCompetence').style.display = 'flex';
+          document.querySelector('#displayComp').style.display = 'block';
+        } else {
+          document.querySelector('.filterCompetence').style.display = 'none';
+          document.querySelector('#displayComp').style.display = 'none';
+        }
+      }
+
       filterProjects();
     });
   });
@@ -360,8 +372,8 @@ function customSelect(element) {
       customSelect
         .querySelector('.svg-arrow>path')
         .setAttribute('fill', '#5A13B1');
-        customSelect.querySelector('.selected').style.backgroundColor = 'white';
-        selected.firstElementChild.style.color = '#5A13B1';
+      customSelect.querySelector('.selected').style.backgroundColor = 'white';
+      selected.firstElementChild.style.color = '#5A13B1';
       toggleFilter(customSelect, options, heightSelect);
     }
   });
@@ -370,15 +382,18 @@ function customSelect(element) {
     selected.style.backgroundColor = '#5A13B1';
     selected.firstElementChild.style.color = 'white';
     selected.querySelectorAll('.arrow').forEach((element) => {
-      element.firstElementChild.firstElementChild.setAttribute("fill",'white');
+      element.firstElementChild.firstElementChild.setAttribute('fill', 'white');
     });
   });
   selected.addEventListener('mouseleave', () => {
-    if(customSelect.classList.contains('open')) return;
+    if (customSelect.classList.contains('open')) return;
     selected.style.backgroundColor = 'white';
     selected.firstElementChild.style.color = '#5A13B1';
     selected.querySelectorAll('.arrow').forEach((element) => {
-      element.firstElementChild.firstElementChild.setAttribute("fill",'#5A13B1');
+      element.firstElementChild.firstElementChild.setAttribute(
+        'fill',
+        '#5A13B1',
+      );
     });
   });
 }
@@ -435,11 +450,16 @@ function filterProjects() {
   const filterType = document.querySelector('#filterType .option.active');
   const type = filterType.dataset.value;
 
-  const order = document.querySelector('.sort').classList[1];
   const filterDomain = document.querySelector('#filterDomain .option.active');
   const domain = filterDomain.dataset.value;
 
+  const filterComp = document.querySelector('#filterCompetence .option.active');
+  const comp = filterComp.dataset.value;
+
+  const order = document.querySelector('.sort').classList[1];
+
   const whichProject = document.querySelector('#whichProjects');
+  const displayComp = document.querySelector('#displayComp');
   writeProjects().then(() => {
     let projects = Array.from(document.querySelectorAll('.project'));
 
@@ -450,6 +470,17 @@ function filterProjects() {
       whichProject.textContent = 'Mes projets ' + filterType.textContent + ' !';
     } else {
       whichProject.textContent = 'Touts mes projets !';
+    }
+
+    if (type == 'BUT') {
+      if (comp !== 'all') {
+        projects = projects.filter((project) =>
+          project.dataset.comp.includes(comp),
+        );
+        displayComp.textContent = 'Compétence ' + filterComp.textContent;
+      } else {
+        displayComp.textContent = 'Toutes les compétences !';
+      }
     }
 
     if (domain !== 'all') {
@@ -506,6 +537,10 @@ async function writeProjects() {
             'data-domain',
             JSON.stringify(project.domain),
           );
+          projectDiv.setAttribute(
+            'data-comp',
+            JSON.stringify(project.competence),
+          );
 
           projectDiv.setAttribute('onclick', 'zoomProjectPhone(this)');
 
@@ -546,6 +581,7 @@ async function writeProjects() {
 
           const projectDescription = document.createElement('p');
           projectDescription.innerHTML = project.description;
+          projectDescription.classList.add('resume');
 
           const projectTechnos = document.createElement('p');
           projectTechnos.classList.add('technos');
@@ -554,8 +590,26 @@ async function writeProjects() {
               ? `<span>[${project.technologies.join(', ')}]</span>`
               : '<span>Projet non technique</span>';
 
+          
+
+          const linkProject = document.createElement('a');
+          linkProject.classList.add('linkProject');
+          linkProject.href = project.link;
+          linkProject.target = '_blank';
+          linkProject.textContent = 'Voir le projet';
+
           resumeProjectDiv.appendChild(projectDescription);
           resumeProjectDiv.appendChild(projectTechnos);
+
+
+          if(type == 'BUT informatique'){
+          const projectComp = document.createElement('p');
+          projectComp.classList.add('projectComps');
+          projectComp.innerHTML =`<span>[Compétences: ${project.competence.join(',')}]</span>`;
+          resumeProjectDiv.appendChild(projectComp);
+          }
+
+          resumeProjectDiv.appendChild(linkProject);
 
           const contextProject = document.createElement('p');
           contextProject.classList.add('contextProject');

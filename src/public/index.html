@@ -126,7 +126,8 @@
       <div id="profile">
         <img src="./ressources/assets/images/114.jpg" alt="photo de yoann" id="profile_photo" />
         <p id="profile_text">
-          Passionné par la programmation, je réalise de nombreux projets personnels, professionnels ou liés à mes études.
+          Passionné par la programmation, je réalise de nombreux projets personnels, professionnels ou liés à mes
+          études.
           Je développe constamment de nouvelles compétences et je suis toujours prêt à relever de nouveaux défis.
         </p>
       </div>
@@ -209,10 +210,37 @@
             </ul>
           </div>
         </div>
+
+
+        <div class="filter filterCompetence" >
+          <p>Compétence</p>
+          <div class="custom-select" id="filterCompetence">
+            <span class="selected">
+              <span>
+                Tous
+              </span>
+              <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-arrow">
+                  <path fill="#5A13B1"
+                    d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                </svg>
+              </div>
+            </span>
+            <ul class="options">
+              <li data-value="all" class="option active">Tous</li>
+              <li data-value="1" class="option">1 Réaliser</li>
+              <li data-value="2" class="option">2 Optimiser</li>
+              <li data-value="3" class="option">3 Administrer</li>
+              <li data-value="4" class="option">4 Gérer</li>
+              <li data-value="5" class="option">5 Conduire</li>
+              <li data-value="6" class="option">6 Collaborer</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <span id="whichProjects">Mes projets favoris</span>
-
+      <span id="displayComp">Compétence 1</span>
       <div id="containerSortProject">
         <div id="sortProject" class="sort increase" title="Récents d'abbord">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="arrowSort" id="increaseArrow">
@@ -230,21 +258,27 @@
         </div>
       </div>
       <div id="listProjects">
-        <div class="project" onclick="zoomProjectPhone(this)">
-          <div class="descProject">
+        <div class="project" data-type="[&quot;BUT&quot;]" data-date="2022-10-01"
+          data-domain="[&quot;system&quot;,&quot;software&quot;]" onclick="zoomProjectPhone(this)"
+          style="background-image: url(&quot;./ressources/assets/images/projets/puissance4.png&quot;); width: 47.5%;">
+          <div class="descProject" style="margin-top: 5rem; height: 7rem;">
             <div class="descProjectHeader">
-              <h4>Puissance 4</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onclick="xmarkClick()" class="xmark">
+              <h4>Puissance 4</h4><svg viewBox="0 0 384 512" class="xmark" onclick="xmarkClick()"
+                style="display: none;">
                 <path fill="#ffffff"
-                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z">
+                </path>
               </svg>
             </div>
-            <div class="resumeProject">
-              <p>Création d'un Puissance 4 exécutable et jouable dans un terminal. Ce jeu pouvait être joué à 2, chacun
-                son tour, directement dans le même terminal. <br></p>
-              <p class="technos"><span>[C, Doxygen]</span></p>
+            <div class="resumeProject" style="height: 0rem;">
+              <p class="resume">Jeu du Puissance 4 exécutable et jouable dans un terminal, à 2 joueurs ou contre un
+                algorithme.</p>
+              <p class="technos"><span>[C, DOXYGEN]</span></p>
+              <a class="linkProject"
+                href="https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.01_Puissance4" target="_blank">Voir le
+                projet</a>
             </div>
-            <p class="contextProject">BUT Informatique 1e année</p>
+            <p class="contextProject">BUT informatique, 1e année</p>
           </div>
         </div>
 

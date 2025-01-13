@@ -10,14 +10,14 @@
                     "DOXYGEN"
                 ],
                 "context": "BUT informatique, 1e année",
-                "compétence": [
-                    "1.1",
-                    "1.2"
+                "competence": [
+                    "1",
+                    "2"
                 ],
                 "date": "2022-10-01",
                 "domain": ["system", "software"],
                 "type": ["BUT"],
-                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.01_Puissance4",
+                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/Puissance4",
                 "image": "./ressources/assets/images/projets/puissance4.png"
             },
             {
@@ -29,14 +29,14 @@
                     "JavaXF"
                 ],
                 "context": "BUT informatique, 1e année",
-                "compétence": [
-                    "2.1",
-                    "2.5"
+                "competence": [
+                    "1",
+                    "5"
                 ],
                 "date": "2023-05-01",
                 "domain": ["software"],
                 "type": ["BUT"],
-                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.01_LogicielHotel",
+                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/Logiciel_Hotel",
                 "image": "./ressources/assets/images/projets/hotel.png"
             },
             {
@@ -47,14 +47,14 @@
                     "Python"
                 ],
                 "context": "BUT informatique, 1e année",
-                "compétence": [
-                    "2.2"
+                "competence": [
+                    "2"
                 ],
                 "date": "2023-04-01",
                 "domain": ["software", "algorithm"],
                 "type": ["BUT"],
-                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.02_TourDuCavalier",
-                "image": "./ressources/assets/images/projets/cavalier.png"
+                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/SAE2.02_TourDuCavalier",
+                "image": "./ressources/assets/images/projets/Cavalier.jpg"
             },
             {
                 "id": 4,
@@ -66,13 +66,13 @@
                     "PHP"
                 ],
                 "context": "BUT informatique, 1e année",
-                "compétence": [
-                    "1.3"
+                "competence": [
+                    "3"
                 ],
                 "date": "2023-01-01",
                 "domain": ["system"],
                 "type": ["BUT"],
-                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.03_Docker",
+                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/SAE1.03_Docker",
                 "image": "./ressources/assets/images/projets/docker.png"
             },
             {
@@ -85,13 +85,13 @@
                     "PHP"
                 ],
                 "context": "BUT informatique, 1e année",
-                "compétence": [
-                    "2.3"
+                "competence": [
+                    "3"
                 ],
                 "date": "2023-06-01",
                 "domain": ["system", "web"],
                 "type": ["BUT"],
-                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.03_Reseau",
+                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/SAE2.03_Reseau",
                 "image": "./ressources/assets/images/projets/apache2.jpg"
             },
             {
@@ -102,13 +102,13 @@
                     "SQL"
                 ],
                 "context": "BUT informatique, 1e année",
-                "compétence": [
-                    "1.4"
+                "competence": [
+                    "4"
                 ],
                 "date": "2022-12-01",
                 "domain": ["database"],
                 "type": ["BUT"],
-                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.04_TransmusicalesBDD",
+                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/SAE1.04_TransmusicalesBDD",
                 "image": "./ressources/assets/images/projets/transmusicales.png"
             },
             {
@@ -119,13 +119,13 @@
                     "SQL"
                 ],
                 "context": "BUT informatique, 1e année",
-                "compétence": [
-                    "2.4"
+                "competence": [
+                    "4"
                 ],
                 "date": "2023-05-01",
                 "domain": ["database"],
                 "type": ["BUT"],
-                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.04_ParcoursupBDD",
+                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/SAE2.04_ParcoursupBDD",
                 "image": "./ressources/assets/images/projets/parcoursup.jpg"
             },
             {
@@ -137,13 +137,13 @@
                     "JS"
                 ],
                 "context": "BUT informatique, 1e année",
-                "compétence": [
-                    "1.5"
+                "competence": [
+                    "5"
                 ],
                 "date": "2022-11-01",
                 "domain": ["web"],
                 "type": ["BUT"],
-                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.05_SportKOH",
+                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/SAE1.05_SportKOH",
                 "image": "./ressources/assets/images/projets/logo.png"
             },
             {
@@ -152,13 +152,13 @@
                 "description": "Étude de la RSE de heineken et tableau des caractéristiques de l'entreprise",
                 "technologies": [],
                 "context": "BUT informatique, 1e année",
-                "compétence": [
-                    "1.6"
+                "competence": [
+                    "6"
                 ],
                 "date": "2022-10-01",
                 "domain": ["document"],
                 "type": ["BUT"],
-                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE1.06_RSE",
+                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/SAE1.06_RSE",
                 "image": "./ressources/assets/images/projets/heineken.png"
             },
             {
@@ -167,13 +167,13 @@
                 "description": "Evenement de team buiding fictif pour la société Océanopolis, avec son flyers et son film évènementiel.",
                 "technologies": [],
                 "context": "BUT informatique, 1e année",
-                "compétence": [
-                    "1.6"
+                "competence": [
+                    "6"
                 ],
                 "date": "2022-10-01",
                 "domain": ["document"],
                 "type": ["BUT"],
-                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.06_TeamBuilding",
+                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/SAE2.06_TeamBuilding",
                 "image": "./ressources/assets/images/projets/Océanopolis.jpg"
             },
             {
@@ -190,25 +190,19 @@
                     "C"
                 ],
                 "context": "BUT informatique, 2e année",
-                "compétence": [
-                    "3.1",
-                    "3.2",
-                    "3.3",
-                    "3.4",
-                    "3.5",
-                    "3.6",
-                    "4.1",
-                    "4.2",
-                    "4.3",
-                    "4.4",
-                    "4.5",
-                    "4.6"
+                "competence": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6"
                 ],
                 "date": "2024-03-01",
                 "domain": ["web", "system", "database"],
                 "type": ["BUT", "favorite"],
-                "link": "https://github.com/yoannGautier/projetsSAE/tree/main/SAE2.06_TeamBuilding",
-                "image": "./ressources/assets/images/projets/soon.jpg"
+                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/SAE2.06_TeamBuilding",
+                "image": "./ressources/assets/images/projets/AllaizhBreizh.png"
             }
         ],
         "Perso": [
@@ -219,13 +213,14 @@
                 "technologies": [
                     "HTML/CSS",
                     "JS",
-                    "Docker"
+                    "Docker", 
+                    "Bash"
                 ],
-                "context": "Personnel, Fin 2024",
-                "date": "2024-12-01",
+                "context": "Personnel, 2025",
+                "date": "2025-01-01",
                 "domain": ["web", "system", "database"],
                 "type": ["favorite", "personal"],
-                "link": "https://github.com/gomuchii/portfolio",
+                "link": "https://github.com/YoannGTR/portfolio",
                 "image": "./ressources/assets/images/projets/portfolio_v2.png"
             },
             {
@@ -234,14 +229,13 @@
                 "description": "Mon premier portfolio",
                 "technologies": [
                     "HTML/CSS",
-                    "JS",
-                    "Docker"
+                    "JS"
                 ],
                 "context": "Personnel, Mai 2023",
                 "date": "2023-05-01",
                 "domain": ["web"],
                 "type": ["favorite", "personal"],
-                "link": "https://github.com/gomuchii/portfolio",
+                "link": "https://github.com/YoannGTR/ancien-portfolio",
                 "image": "./ressources/assets/images/projets/portfolio_v1.png"
             }
         ],
@@ -258,8 +252,8 @@
                 "date": "2024-08-01",
                 "domain": ["software"],
                 "type": ["favorite", "professional"],
-                "link": "https://github.com/gomuchii/disserto",
-                "image": "./ressources/assets/images/projets/Disserto.png"
+                "link": "https://github.com/YoannGTR/disserto",
+                "image": "./ressources/assets/images/projets/Disserto.jpg"
             },
             {
                 "id": 201,
@@ -275,8 +269,8 @@
                 "date": "2023-10-01",
                 "domain": ["software", "system"],
                 "type": ["favorite", "professional"],
-                "link": "https://github.com/gomuchii/talia",
-                "image": "./ressources/assets/images/projets/talia.png"
+                "link": "https://github.com/YoannGTR/talia",
+                "image": "./ressources/assets/images/projets/talia.jpg"
             }
 
         ]
