@@ -591,12 +591,18 @@ async function writeProjects() {
               : '<span>Projet non technique</span>';
 
           
-
-          const linkProject = document.createElement('a');
-          linkProject.classList.add('linkProject');
-          linkProject.href = project.link;
-          linkProject.target = '_blank';
-          linkProject.textContent = 'Voir le projet';
+          let linkProject;
+          if(project.link == ""){
+            linkProject = document.createElement('p');
+            linkProject.classList.add('linkProject');
+            linkProject.textContent = 'Projet non disponible';
+          }else{
+            linkProject = document.createElement('a');
+            linkProject.classList.add('linkProject');
+            linkProject.href = project.link;
+            linkProject.target = '_blank';
+            linkProject.textContent = 'Voir le projet';
+          }
 
           resumeProjectDiv.appendChild(projectDescription);
           resumeProjectDiv.appendChild(projectTechnos);
@@ -689,3 +695,14 @@ window.addEventListener('resize', function () {
   }
   winSize = window.innerWidth;
 });
+
+
+
+function copyMail(){
+  const mail = "yoann.gautier.1@etudiant.univ-rennes.fr";
+  navigator.clipboard.writeText(mail).then(async () => {
+    document.querySelector('#contactDiv>button').textContent = "Copié !";
+    await new Promise(r => setTimeout(r, 3000));
+    document.querySelector('#contactDiv>button').textContent = "Copier";
+  });
+}

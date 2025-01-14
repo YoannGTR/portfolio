@@ -178,7 +178,7 @@
             },
             {
                 "id": 10,
-                "title": "Allaizh breizh",
+                "title": "Alhaizh breizh",
                 "description": "Site de réservation de séjours en Bretagne, avec un backoffice pour les administrateurs. Le chemin utilisateur était complet, de l'accueil à la validation de la réservation.",
                 "technologies": [
                     "HTML/CSS",
@@ -201,8 +201,8 @@
                 "date": "2024-03-01",
                 "domain": ["web", "system", "database"],
                 "type": ["BUT", "favorite"],
-                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/SAE2.06_TeamBuilding",
-                "image": "./ressources/assets/images/projets/AllaizhBreizh.png"
+                "link": "https://github.com/YoannGTR/projetsSAE/tree/main/Alhaiz-breizh",
+                "image": "./ressources/assets/images/projets/AlhaizBreizh.svg"
             }
         ],
         "Perso": [
@@ -218,7 +218,7 @@
                 ],
                 "context": "Personnel, 2025",
                 "date": "2025-01-01",
-                "domain": ["web", "system", "database"],
+                "domain": ["web", "system"],
                 "type": ["favorite", "personal"],
                 "link": "https://github.com/YoannGTR/portfolio",
                 "image": "./ressources/assets/images/projets/portfolio_v2.png"
@@ -252,7 +252,7 @@
                 "date": "2024-08-01",
                 "domain": ["software"],
                 "type": ["favorite", "professional"],
-                "link": "https://github.com/YoannGTR/disserto",
+                "link": "",
                 "image": "./ressources/assets/images/projets/Disserto.jpg"
             },
             {
@@ -269,7 +269,7 @@
                 "date": "2023-10-01",
                 "domain": ["software", "system"],
                 "type": ["favorite", "professional"],
-                "link": "https://github.com/YoannGTR/talia",
+                "link": "",
                 "image": "./ressources/assets/images/projets/talia.jpg"
             }
 

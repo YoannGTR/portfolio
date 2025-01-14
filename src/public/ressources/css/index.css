@@ -274,7 +274,7 @@ section {
   align-items: center;
   background-color: var(--color2);
   border-radius: 0.5rem;
-  width: 15rem;
+  width: 14rem;
   transition: max-height 0.5s ease;
   overflow: hidden;
 }
@@ -284,12 +284,13 @@ section {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
   padding: 0.5rem;
+  gap: 1rem;
   width: 100%;
   background-color: var(--color1);
   border-radius: 0.5rem;
 }
+
 
 .header-with-dropdown {
   cursor: pointer;
@@ -705,7 +706,7 @@ section {
 .descProject > p {
   font-family: var(--jetbrainLight);
 }
-.linkProject{
+a.linkProject{
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
   background-color: var(--colorBgDarkMode);
@@ -715,9 +716,19 @@ section {
   width: fit-content;
   align-self: center;
 }
-.linkProject:hover, .linkProject:active{
+a.linkProject:hover, a.linkProject:active{
   padding: 1rem 2rem;
   background-color: var(--black);
+}
+p.linkProject{
+  padding: 1rem 1.5rem;
+  align-self: center;
+  width: fit-content;
+  color: var(--black);
+  background-color: var(--color2);
+  border: var(--colorBgDarkMode) 0.125rem solid;
+  border-radius: 0.5rem;
+  text-align: center;
 }
 
 .contextProject{
@@ -725,6 +736,53 @@ section {
   font-size: 0.8rem;
   align-self: right;
   justify-self: flex-end;
+}
+
+#contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+
+}
+#contactDiv{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--colorBgDarkMode);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+#contact h2{
+  color: var(--color1);
+}
+
+#contact p{
+  color: var(--white);
+  text-align: center;
+}
+
+#contactDiv>button{
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--color1);
+  color: var(--white);
+  text-decoration: none;
+  border: 0.125rem solid var(--color1);
+  transition: 0.2s ease;
+  cursor: pointer;
+  margin: 0.125rem 0.25rem;
+}
+
+#contactDiv>button:hover, #contactDiv>button:active{
+  background-color: var(--colorBgDarkMode);
+  padding: 1.125rem 2.25rem;
+  margin: 0;
 }
 
 /* mini devices (little phone) */
@@ -1094,6 +1152,10 @@ section {
   #experience > h2,
   #skills > h2 {
     align-self: center;
+  }
+  #contactDiv{
+    width: 60rem;
+    gap: 1rem;
   }
 }
 
