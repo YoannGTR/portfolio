@@ -11,11 +11,11 @@
         "under-skill": [
           {
             "name": "JavaFX",
-            "level": 3.0
+            "level": 2.0
           },
           {
             "name": "Swing",
-            "level": 2.0
+            "level": 3.0
           }
         ]
       },
@@ -25,21 +25,21 @@
         "under-skill": [
           {
             "name": "Bootstrap",
-            "level": 4.0
+            "level": 2.0
           },
           {
             "name": "SASS/SCSS",
-            "level": 3.0
+            "level": 2.0
           }
         ]
       },
       {
         "name": "JavaScript",
-        "level": 4.0,
+        "level": 3.0,
         "under-skill": [
           {
             "name": "NodeJS",
-            "level": 3.0
+            "level": 2.0
           },
           {
             "name": "JSON",
@@ -53,17 +53,17 @@
         "under-skill": [
           {
             "name": "Laravel",
-            "level": 3.0
+            "level": 2.0
           }
         ]
       },
       {
         "name": "Bash",
-        "level": 3.0,
+        "level": 3.5,
         "under-skill": [
           {
             "name": "Batch",
-            "level": 3.0
+            "level": 2.0
           },
           {
             "name": "VBScript",
@@ -73,7 +73,7 @@
       },
       {
         "name": "SQL",
-        "level": 3.0,
+        "level": 3.5,
         "under-skill": [
           {
             "name": "MySQL",
@@ -101,7 +101,7 @@
     "soft": [
       {
         "name": "Gestion de projet",
-        "level": 4.0,
+        "level": 3.5,
         "under-skill": [
           {
             "name": "Jira",
@@ -125,7 +125,7 @@
       },
       {
         "name": "Git",
-        "level": 3.0,
+        "level": 3.5,
         "under-skill": [
           {
             "name": "GitHub",
@@ -147,7 +147,7 @@
           },
           {
             "name": "TU avec Junit",
-            "level": 2.0
+            "level": 3.0
           }
         ]
       },
@@ -157,11 +157,11 @@
         "under-skill": [
           {
             "name": "ChatGPT",
-            "level": 3.0
+            "level": 2.5
           },
           {
             "name": "Copilot",
-            "level": 2.5
+            "level": 3.0
           }
         ]
       }
