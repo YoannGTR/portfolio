@@ -157,130 +157,62 @@ async function writeSkills() {
     const response = await fetch(pathJson + 'skill.json');
     const data = await response.json();
 
-    document.querySelector('#hard-skill>h3').textContent = data['titles'][0];
-    document.querySelector('#soft-skill>h3').textContent = data['titles'][1];
+    document.querySelector('#groupSkillFront>h3').textContent =
+      data['titles'][0];
+    document.querySelector('#groupSkillBack>h3').textContent =
+      data['titles'][1];
+    document.querySelector('#groupSkillSys>h3').textContent = data['titles'][2];
 
-    let listHardSkill = document.querySelector('#hard-skill>.skills');
-    Array.from(data['skills']['hard']).forEach((element) => {
-      createSkillPattern(listHardSkill, element);
-    });
-    let listSoftSkill = document.querySelector('#soft-skill>.skills');
-    Array.from(data['skills']['soft']).forEach((element) => {
-      createSkillPattern(listSoftSkill, element);
-    });
+    let listSkillFront = document.querySelector('#listSkillFront');
+    Array.from(data['skills']['FrontEnd'])
+      .sort((a, b) => b.level - a.level)
+      .forEach((element) => {
+        createSkillPattern(listSkillFront, element);
+      });
+    let listSkillBack = document.querySelector('#listSkillBack');
+    data['skills']['BackEnd']
+      .sort((a, b) => b.level - a.level)
+      .forEach((element) => {
+        createSkillPattern(listSkillBack, element);
+      });
+    let listSkillSys = document.querySelector('#listSkillSys');
+    Array.from(data['skills']['System'])
+      .sort((a, b) => b.level - a.level)
+      .forEach((element) => {
+        createSkillPattern(listSkillSys, element);
+      });
   } catch (error) {
     console.error('Error:', error);
   }
 }
-
-/**
- * Creates a skill pattern element and appends it to the specified parent element.
- *
- * @param {HTMLElement} parent - The parent element to which the skill pattern will be appended.
- * @param {Object} skill - The skill object containing information about the skill.
- * @param {string} skill.name - The name of the skill.
- * @param {number} skill.level - The level of the skill.
- * @param {Array<Object>} [skill['under-skill']] - An optional array of under-skills.
- * @param {string} skill['under-skill'].name - The name of the under-skill.
- * @param {number} skill['under-skill'].level - The level of the under-skill.
- */
+const skillLogosPath = './ressources/assets/images/skills/';
 function createSkillPattern(parent, skill) {
-  let oneSkill = document.createElement('div');
-  oneSkill.classList.add('one-skill');
+  let skillLogo = document.createElement('img');
+  skillLogo.setAttribute('src', skillLogosPath + skill.name + '.png');
+  skillLogo.setAttribute('alt', skill.name);
+  skillLogo.setAttribute('title', skill.name);
+  skillLogo.classList.add('skillLogo');
 
-  let header = document.createElement('div');
-  header.classList.add('header-skill');
+  let skillName = document.createElement('p');
+  skillName.textContent = skill.name;
+  skillName.classList.add('skillName');
 
-  let typeSkill = document.createElement('div');
-  typeSkill.classList.add('type-skill');
+  let skillTooltip = document.createElement('span');
+  skillTooltip.classList.add('tooltip');
+  skillTooltip.textContent = skill.name;
 
-  let titreSkill = document.createElement('h4');
-  titreSkill.textContent = skill.name;
+  let skillDiv = document.createElement('div');
+  skillDiv.classList.add('skill');
+  skillDiv.classList.add(skill.type);
+  skillDiv.appendChild(skillLogo);
+  skillDiv.appendChild(skillName);
+  skillDiv.appendChild(skillTooltip);
 
-  let noteSkill = document.createElement('div');
-  noteSkill.classList.add('note-skill');
-  for (let i = 0; i < Math.floor(skill.level); i++) {
-    noteSkill.innerHTML +=
-      "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512' fill='white'><path d='M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z'/></svg>";
-  }
-  if (skill.level % 1 !== 0) {
-    noteSkill.innerHTML +=
-      "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512' fill='white' style='clip-path: inset(0 50% 0 0);'><path d='M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z'/></svg>";
-  }
-
-  let svgContent = '';
-
-  let bodySkill = document.createElement('div');
-  bodySkill.classList.add('body-skill');
-
-  if (skill['under-skill']) {
-    header.setAttribute('onclick', 'toggleDropdownSkill(this)');
-    header.classList.add('header-with-dropdown');
-    svgContent =
-      "<svg xmlns='http://www.w3.org/2000/svg' class='arrow-dropdown-skill' viewBox='0 0 448 512' fill='white'><path d='M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z'/></svg>";
-
-    skill['under-skill'].forEach((underSkill) => {
-      let underSkillDiv = document.createElement('div');
-      underSkillDiv.classList.add('under-skill');
-      let underSkillTitle = document.createElement('h5');
-      underSkillTitle.textContent = underSkill.name;
-      let underSkillNote = document.createElement('div');
-      underSkillNote.classList.add('note-under-skill');
-      for (let i = 0; i < Math.floor(underSkill.level); i++) {
-        underSkillNote.innerHTML +=
-          "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'><path d='M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z'/></svg>";
-      }
-      if (underSkill.level % 1 !== 0) {
-        underSkillNote.innerHTML +=
-          "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512' style='clip-path: inset(0 50% 0 0);'><path d='M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z'/></svg>";
-      }
-      underSkillDiv.appendChild(underSkillTitle);
-      underSkillDiv.appendChild(underSkillNote);
-      bodySkill.appendChild(underSkillDiv);
-    });
-  }
-
-  typeSkill.appendChild(titreSkill);
-  typeSkill.appendChild(noteSkill);
-  header.appendChild(typeSkill);
-  header.innerHTML += svgContent;
-  oneSkill.appendChild(header);
-  oneSkill.appendChild(bodySkill);
-  parent.appendChild(oneSkill);
+  parent.appendChild(skillDiv);
 }
 
-/**
- * Toggles the visibility of a dropdown menu associated with a skill button.
- *
- * @param {HTMLElement} button - The button element that triggers the dropdown toggle.
- */
-function toggleDropdownSkill(button) {
-  const dropdown = button.nextElementSibling;
-  if (dropdown.classList.contains('showSkill')) {
-    button.parentElement.style.maxHeight = button.scrollHeight + 'px';
-    dropdown.classList.remove('showSkill');
-    button.style.borderRadius = '0.5rem';
-    button.querySelector('.arrow-dropdown-skill').style.transform = 'rotate(0)';
-  } else {
-    dropdown.classList.add('showSkill');
-    button.style.borderBottomLeftRadius = '0rem';
-    button.style.borderBottomRightRadius = '0rem';
-    button.parentElement.style.maxHeight =
-      button.scrollHeight + dropdown.scrollHeight + 'px';
-    button.querySelector('.arrow-dropdown-skill').style.transform =
-      'rotate(180deg)';
-  }
-}
-
-window.addEventListener('DOMContentLoaded', function () {
-  writeSkills().then(() => {
-    Array.from(document.getElementsByClassName('one-skill')).forEach(
-      (element) => {
-        element.style.maxHeight =
-          element.getElementsByClassName('header-skill')[0].scrollHeight + 'px';
-      },
-    );
-  });
+window.addEventListener('DOMContentLoaded', () => {
+  writeSkills();
 });
 
 function switchFilter(element) {
@@ -294,8 +226,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.custom-select').forEach((element) => {
     customSelect(element);
   });
-  document.querySelector('.filterCompetence').style.display = 'none';
-  document.querySelector('#displayComp').style.display = 'none';
   buttonSort();
   filterProjects();
 });
@@ -330,16 +260,6 @@ function customSelect(element) {
       toggleFilter(customSelect, options, heightSelect);
       customSelect.querySelector('.selected').style.backgroundColor = 'white';
       selected.firstElementChild.style.color = '#5A13B1';
-
-      if (customSelect.id == 'filterType') {
-        if (value == 'BUT') {
-          document.querySelector('.filterCompetence').style.display = 'flex';
-          document.querySelector('#displayComp').style.display = 'block';
-        } else {
-          document.querySelector('.filterCompetence').style.display = 'none';
-          document.querySelector('#displayComp').style.display = 'none';
-        }
-      }
 
       filterProjects();
     });
@@ -453,13 +373,9 @@ function filterProjects() {
   const filterDomain = document.querySelector('#filterDomain .option.active');
   const domain = filterDomain.dataset.value;
 
-  const filterComp = document.querySelector('#filterCompetence .option.active');
-  const comp = filterComp.dataset.value;
-
   const order = document.querySelector('.sort').classList[1];
 
   const whichProject = document.querySelector('#whichProjects');
-  const displayComp = document.querySelector('#displayComp');
   writeProjects().then(() => {
     let projects = Array.from(document.querySelectorAll('.project'));
 
@@ -470,17 +386,6 @@ function filterProjects() {
       whichProject.textContent = 'Mes projets ' + filterType.textContent + ' !';
     } else {
       whichProject.textContent = 'Touts mes projets !';
-    }
-
-    if (type == 'BUT') {
-      if (comp !== 'all') {
-        projects = projects.filter((project) =>
-          project.dataset.comp.includes(comp),
-        );
-        displayComp.textContent = 'Compétence ' + filterComp.textContent;
-      } else {
-        displayComp.textContent = 'Toutes les compétences !';
-      }
     }
 
     if (domain !== 'all') {
@@ -537,100 +442,70 @@ async function writeProjects() {
             'data-domain',
             JSON.stringify(project.domain),
           );
-          projectDiv.setAttribute(
-            'data-comp',
-            JSON.stringify(project.competence),
-          );
 
-          projectDiv.setAttribute('onclick', 'zoomProjectPhone(this)');
+          let titleProject = document.createElement('h4');
+          titleProject.textContent = project.title;
+          titleProject.classList.add('titleProject');
 
-          const descProjectDiv = document.createElement('div');
-          descProjectDiv.classList.add('descProject');
+          let descProject = document.createElement('p');
+          descProject.innerHTML = project.description;
+          descProject.classList.add('descProject');
 
-          const descProjectHeaderDiv = document.createElement('div');
-          descProjectHeaderDiv.classList.add('descProjectHeader');
+          let projectTechnos = document.createElement('div');
+          projectTechnos.classList.add('technosProject');
 
-          const projectTitle = document.createElement('h4');
-          projectTitle.textContent = project.title;
-
-          const xmarkSvg = document.createElementNS(
-            'http://www.w3.org/2000/svg',
-            'svg',
-          );
-          xmarkSvg.setAttribute('viewBox', '0 0 384 512');
-          xmarkSvg.classList.add('xmark');
-          xmarkSvg.setAttribute('onclick', 'xmarkClick()');
-
-          const xmarkPath = document.createElementNS(
-            'http://www.w3.org/2000/svg',
-            'path',
-          );
-          xmarkPath.setAttribute('fill', '#ffffff');
-          xmarkPath.setAttribute(
-            'd',
-            'M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z',
-          );
-
-          xmarkSvg.appendChild(xmarkPath);
-
-          descProjectHeaderDiv.appendChild(projectTitle);
-          descProjectHeaderDiv.appendChild(xmarkSvg);
-
-          const resumeProjectDiv = document.createElement('div');
-          resumeProjectDiv.classList.add('resumeProject');
-
-          const projectDescription = document.createElement('p');
-          projectDescription.innerHTML = project.description;
-          projectDescription.classList.add('resume');
-
-          const projectTechnos = document.createElement('p');
-          projectTechnos.classList.add('technos');
-          projectTechnos.innerHTML =
-            project.technologies.length != 0
-              ? `<span>[${project.technologies.join(', ')}]</span>`
-              : '<span>Projet non technique</span>';
-
-          
-          let linkProject;
-          if(project.link == ""){
-            linkProject = document.createElement('p');
-            linkProject.classList.add('linkProject');
-            linkProject.textContent = 'Projet non disponible';
-          }else{
-            linkProject = document.createElement('a');
-            linkProject.classList.add('linkProject');
-            linkProject.href = project.link;
-            linkProject.target = '_blank';
-            linkProject.textContent = 'Voir le projet';
+          for (const techno of project.technologies) {
+            let technoSpan = document.createElement('p');
+            technoSpan.textContent = techno;
+            projectTechnos.appendChild(technoSpan);
           }
 
-          resumeProjectDiv.appendChild(projectDescription);
-          resumeProjectDiv.appendChild(projectTechnos);
+          let linksProjectDiv = document.createElement('div');
+          linksProjectDiv.classList.add('linksProjectDiv');
+
+          let linkProject = document.createElement('a');
+          linkProject.classList.add('linkProject');
+          linkProject.href = project.link;
+          linkProject.target = '_blank';
+          linkProject.rel = 'noopener noreferrer'; // pour la sécurité
+          linkProject.textContent = 'Github';
+
+          linksProjectDiv.appendChild(linkProject);
 
 
-          if(type == 'BUT informatique'){
-          const projectComp = document.createElement('p');
-          projectComp.classList.add('projectComps');
-          projectComp.innerHTML =`<span>[Compétences: ${project.competence.join(',')}]</span>`;
-          resumeProjectDiv.appendChild(projectComp);
+          if (project.linkLive !== undefined) {
+            let linkProject2 = document.createElement('a');
+            linkProject2.classList.add('linkProject');
+            linkProject2.href = project.linkLive;
+            linkProject2.target = '_blank';
+            linkProject2.rel = 'noopener noreferrer'; // pour la sécurité
+            linkProject2.textContent = 'Vue live';
+
+            linksProjectDiv.appendChild(linkProject2);
           }
 
-          resumeProjectDiv.appendChild(linkProject);
-
-          const contextProject = document.createElement('p');
+          let contextProject = document.createElement('p');
           contextProject.classList.add('contextProject');
           contextProject.textContent = project.context;
 
-          descProjectDiv.appendChild(descProjectHeaderDiv);
-          descProjectDiv.appendChild(resumeProjectDiv);
-          descProjectDiv.appendChild(contextProject);
+          let descDiv = document.createElement('div');
+          descDiv.classList.add('descProjectDiv');
+          descDiv.appendChild(titleProject);
+          descDiv.appendChild(descProject);
+          descDiv.appendChild(projectTechnos);
+          descDiv.appendChild(linksProjectDiv);
+          descDiv.appendChild(contextProject);
 
-          projectDiv.appendChild(descProjectDiv);
+          let descDiv2 = document.createElement('div');
+          descDiv2.classList.add('descProjectDiv2');
+          descDiv2.appendChild(titleProject.cloneNode(true));
+          descDiv2.appendChild(contextProject.cloneNode(true));
+
+          projectDiv.appendChild(descDiv);
+          projectDiv.appendChild(descDiv2);
+
           projectDiv.style.backgroundImage = `url(${project.image})`;
           listProjects.appendChild(projectDiv);
-          projectDiv.addEventListener('click', function () {
-            openProject(projectDiv);
-          });
         });
       }
     }
@@ -639,70 +514,11 @@ async function writeProjects() {
   }
 }
 
-var xmarkClicked = false;
-function zoomProjectPhone(element) {
-  if (window.innerWidth < 768) {
-    if (xmarkClicked) {
-      unZoomProjectPhone(element);
-      xmarkClicked = false;
-    } else {
-      document.querySelectorAll('.project').forEach((element) => {
-        unZoomProjectPhone(element);
-      });
-      element.style.width = '100%';
-      element.querySelector('.descProject').style.marginTop = '0rem';
-      element.querySelector('.descProject').style.height = '25rem';
-      element.querySelector('.resumeProject').style.height = '100%';
-      element.querySelector('.xmark').style.display = 'block';
-      // setTimeout(() => {
-      //   window.scrollTo({
-      //     top: element.offsetTop - 160,
-      //     behavior: 'smooth'
-      //   });
-      // }, 100); // Exécuter après les instructions précédentes
-    }
-  }
-}
-
-function unZoomProjectPhone(element) {
-  element.style.width = '47.5%';
-  element.querySelector('.descProject').style.marginTop = '5rem';
-  element.querySelector('.descProject').style.height = '7rem';
-  element.querySelector('.resumeProject').style.height = '0rem';
-  element.querySelector('.xmark').style.display = 'none';
-}
-function unZoomProjectPC(element) {
-  element.style.width = '24.1%';
-  element.querySelector('.descProject').removeAttribute('style');
-  element.querySelector('.resumeProject').removeAttribute('style');
-  element.querySelector('.xmark').removeAttribute('style');
-}
-
-function xmarkClick() {
-  xmarkClicked = true;
-}
-
-let winSize = window.innerWidth;
-window.addEventListener('resize', function () {
-  if (winSize < 768 && window.innerWidth >= 768) {
-    document.querySelectorAll('.project').forEach((element) => {
-      unZoomProjectPC(element);
-    });
-  } else if (winSize >= 768 && window.innerWidth < 768) {
-    document.querySelectorAll('.project').forEach((element) => {
-      unZoomProjectPhone(element);
-    });
-  }
-  winSize = window.innerWidth;
-});
-
-
-
-function copyMail(){
-  const mail = "yoann.gautier.1@etudiant.univ-rennes.fr";
+function copyMail() {
+  const mail = 'yoann.gautier.1@etudiant.univ-rennes.fr';
   navigator.clipboard.writeText(mail).then(async () => {
-    document.querySelector('#contactDiv>button').textContent = "Copié !";
-    await new Promise(r => setTimeout(r, 3000));
-    document.querySelector('#contactDiv>button').textContent = "Copier";
+    document.querySelector('#contactDiv>button').textContent = 'Copié !';
+    await new Promise((r) => setTimeout(r, 3000));
+    document.querySelector('#contactDiv>button').textContent = 'Copier';
   });
 }

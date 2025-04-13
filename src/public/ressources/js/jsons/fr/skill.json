@@ -1,169 +1,120 @@
 {
-  "titles":[
-    "Développement",
-    "Annexes"
-  ],
+  "titles": ["Front-End", "Back-End", "Système"],
   "skills": {
-    "hard": [
+    "BackEnd": [
       {
         "name": "Java",
-        "level": 4.0,
-        "under-skill": [
-          {
-            "name": "JavaFX",
-            "level": 2.0
-          },
-          {
-            "name": "Swing",
-            "level": 3.0
-          }
-        ]
-      },
-      {
-        "name": "HTML/CSS",
-        "level": 4.0,
-        "under-skill": [
-          {
-            "name": "Bootstrap",
-            "level": 2.0
-          },
-          {
-            "name": "SASS/SCSS",
-            "level": 2.0
-          }
-        ]
-      },
-      {
-        "name": "JavaScript",
-        "level": 3.0,
-        "under-skill": [
-          {
-            "name": "NodeJS",
-            "level": 2.0
-          },
-          {
-            "name": "JSON",
-            "level": 3.0
-          }
-        ]
+        "level": 90,
+        "type": "language"
       },
       {
         "name": "PHP",
-        "level": 3.0,
-        "under-skill": [
-          {
-            "name": "Laravel",
-            "level": 2.0
-          }
-        ]
-      },
-      {
-        "name": "Bash",
-        "level": 3.5,
-        "under-skill": [
-          {
-            "name": "Batch",
-            "level": 2.0
-          },
-          {
-            "name": "VBScript",
-            "level": 2.0
-          }
-        ]
-      },
-      {
-        "name": "SQL",
-        "level": 3.5,
-        "under-skill": [
-          {
-            "name": "MySQL",
-            "level": 3.0
-          },
-          {
-            "name": "PostgreSQL",
-            "level": 2.0
-          }
-        ]
+        "level": 50,
+        "type": "language"
       },
       {
         "name": "Python",
-        "level": 3.0
+        "level": 40,
+        "type": "language"
       },
       {
         "name": "C",
-        "level": 3.0
+        "level": 40,
+        "type": "language"
+      },
+      {
+        "name": "SQL",
+        "level": 60,
+        "type": "language"
+      },
+      {
+        "name": "Laravel",
+        "level": 40,
+        "type": "other"
+      },
+      {
+        "name": "MySQL",
+        "level": 60,
+        "type": "other"
+      },
+      {
+        "name": "PostgreSQL",
+        "level": 50,
+        "type": "other"
+      }
+    ],
+    "FrontEnd": [
+      {
+        "name": "HTML",
+        "level": 90,
+        "type": "language"
+      },
+      {
+        "name": "CSS",
+        "level": 90,
+        "type": "language"
+      },
+      {
+        "name": "JavaScript",
+        "level": 70,
+        "type": "language"
+      },
+      {
+        "name": "TypeScript",
+        "level": 60,
+        "type": "language"
+      },
+      {
+        "name": "Java Swing",
+        "level": 70,
+        "type": "other"
+      },
+      {
+        "name": "Bootstrap",
+        "level": 30,
+        "type": "other"
+      },
+      {
+        "name": "React",
+        "level": 50,
+        "type": "other"
+      },
+      {
+        "name": "SolidJS",
+        "level": 50,
+        "type": "other"
+      },
+      {
+        "name": "VueJS",
+        "level": 40,
+        "type": "other"
+      },
+      {
+        "name": "TailwindCSS",
+        "level": 50,
+        "type": "other"
+      }
+    ],
+    "System": [
+      {
+        "name": "Bash",
+        "level": 70,
+        "type": "language"
       },
       {
         "name": "Docker",
-        "level": 3.0
-      }
-    ],
-    "soft": [
-      {
-        "name": "Gestion de projet",
-        "level": 3.5,
-        "under-skill": [
-          {
-            "name": "Jira",
-            "level": 3.0
-          }
-        ]
-      },
-      {
-        "name": "Modélisation",
-        "level": 3.0,
-        "under-skill": [
-          {
-            "name": "Figma",
-            "level": 3.0
-          },
-          {
-            "name": "Charte graphique",
-            "level": 2.0
-          }
-        ]
+        "level": 60,
+        "type": "other"
       },
       {
         "name": "Git",
-        "level": 3.5,
-        "under-skill": [
-          {
-            "name": "GitHub",
-            "level": 3.0
-          },
-          {
-            "name": "GitLab",
-            "level": 2.0
-          }
-        ]
+        "level": 70,
+        "type": "other"
       },
       {
-        "name": "Qualité",
-        "level": 3.0,
-        "under-skill": [
-          {
-            "name": "Sonar",
-            "level": 3.0
-          },
-          {
-            "name": "TU avec Junit",
-            "level": 3.0
-          }
-        ]
-      },
-      {
-        "name": "Utilisation des IA",
-        "level": 3.0,
-        "under-skill": [
-          {
-            "name": "ChatGPT",
-            "level": 2.5
-          },
-          {
-            "name": "Copilot",
-            "level": 3.0
-          }
-        ]
+        "name": "SonarQube",
+        "level": 60,
+        "type": "other"
       }
     ]
   }
