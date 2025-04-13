@@ -463,12 +463,18 @@ async function writeProjects() {
           let linksProjectDiv = document.createElement('div');
           linksProjectDiv.classList.add('linksProjectDiv');
 
+          
           let linkProject = document.createElement('a');
           linkProject.classList.add('linkProject');
-          linkProject.href = project.link;
-          linkProject.target = '_blank';
-          linkProject.rel = 'noopener noreferrer'; // pour la sécurité
-          linkProject.textContent = 'Github';
+          if (project.link != "") {
+            linkProject.href = project.link;
+            linkProject.target = '_blank';
+            linkProject.rel = 'noopener noreferrer'; // pour la sécurité
+            linkProject.textContent = 'Github';
+          }
+          else {
+            linkProject.textContent = 'Code indisponible';
+          }
 
           linksProjectDiv.appendChild(linkProject);
 
