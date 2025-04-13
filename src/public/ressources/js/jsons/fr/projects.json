@@ -23,10 +23,10 @@
             {
                 "id": 2,
                 "title": "Logiciel de gestion d'un hôtel",
-                "description": "Logiciel de gestion d'un hôtel, avec une interface utilisable par le personnel de l'hôtel",
+                "description": "Logiciel de gestion d'un hôtel, pour aider son personnel",
                 "technologies": [
                     "Java",
-                    "JavaXF"
+                    "JavaFX"
                 ],
                 "context": "BUT informatique, 1e année",
                 "competence": [
@@ -42,7 +42,7 @@
             {
                 "id": 3,
                 "title": "Tour du cavalier",
-                "description": "Algorithme en backtracking capable de donner un tour du cavalier, s'il existe, en fonction de la position de départ et de la taille de l'échiquier.",
+                "description": "Algorithme en backtracking capable de donner un tour du cavalier, s'il existe.",
                 "technologies": [
                     "Python"
                 ],
@@ -59,7 +59,7 @@
             {
                 "id": 4,
                 "title": "Environnement Docker",
-                "description": "Evnvironnement docker permettant de générer un fichier PDF à partir d'un document texte rempli par l'utilisateur.",
+                "description": "Evnvironnement docker permettant de générer un PDF à partir d'un texte rempli par l'utilisateur.",
                 "technologies": [
                     "Bash",
                     "HTML/CSS",
@@ -97,7 +97,7 @@
             {
                 "id": 6,
                 "title": "BDD Transmusicales",
-                "description": "Structure de base de donnée avec les données des transmusicales",
+                "description": "Structure de base de donnée avec les données fictives des transmusicales",
                 "technologies": [
                     "SQL"
                 ],
@@ -114,7 +114,7 @@
             {
                 "id": 7,
                 "title": "BDD Parcoursup",
-                "description": "Structure de base de donnée avec les données de Parcoursup",
+                "description": "Structure de base de donnée avec les données fictives de Parcoursup",
                 "technologies": [
                     "SQL"
                 ],
@@ -131,7 +131,7 @@
             {
                 "id": 8,
                 "title": "Sport KOH",
-                "description": "Site vitrine permettant de pouvoir consulter les séjours proposés par l'entreprise fictive Sport KOH.",
+                "description": "Site vitrine pour consulter les séjours proposés par l'entreprise fictive Sport KOH.",
                 "technologies": [
                     "HTML/CSS",
                     "JS"
@@ -177,11 +177,12 @@
                 "image": "./ressources/assets/images/projets/Océanopolis.jpg"
             },
             {
-                "id": 10,
+                "id": 11,
                 "title": "Alhaizh breizh",
-                "description": "Site de réservation de séjours en Bretagne, avec un backoffice pour les administrateurs. Le chemin utilisateur était complet, de l'accueil à la validation de la réservation.",
+                "description": "Site de réservation de séjours en Bretagne, avec un Back Office pour les propriétaires.",
                 "technologies": [
-                    "HTML/CSS",
+                    "HTML",
+                    "CSS",
                     "JS",
                     "PHP",
                     "SQL",
@@ -203,15 +204,61 @@
                 "type": ["BUT", "favorite"],
                 "link": "https://github.com/YoannGTR/projetsSAE/tree/main/Alhaiz-Breizh",
                 "image": "./ressources/assets/images/projets/AlhaizBreizh.svg"
+            },
+            {
+                "id": 12,
+                "title": "Pokemon",
+                "description": "Liste de pokemons et leurs caractéristiques, avec des tris et des filtres.",
+                "technologies": [
+                    "HTML",
+                    "CSS",
+                    "JS"
+                ],
+                "context": "BUT informatique, 2e année",
+                "competence": [
+                    "2"
+                ],
+                "date": "2024-04-14",
+                "domain": ["web"],
+                "type": ["BUT"],
+                "link": "",
+                "image": "./ressources/assets/images/projets/Pokemon.webp"
+            },
+            {
+                "id": 21,
+                "title": "Sérious game Ameli",
+                "description": "Jeux sérieux pour sensibiliser les jeunes aux aides de l'état.",
+                "technologies": [
+                    "HTML",
+                    "TailwindCSS",
+                    "TypeScript",
+                    "SolidJS",
+                    "Phaser",
+                    "Laravel",
+                    "PHP",
+                    "SQL"
+                ],
+                "context": "BUT informatique, 3e année",
+                "competence": [
+                    "1",
+                    "2",
+                    "6"
+                ],
+                "date": "2025-04-01",
+                "domain": ["web"],
+                "type": ["BUT", "favorite"],
+                "link": "",
+                "image": "./ressources/assets/images/projets/Ameli.png"
             }
         ],
         "Perso": [
             {
                 "id": 100,
                 "title": "Portfolio v2 (actuel)",
-                "description": "Réalisé dans le cadre de mon BUT et amélioré pour avoir une réelle utilité et être affiché sur mon CV pour des offres de job et candidater à une école d'ingénieur",
+                "description": "Mon portfolio actuel, refait pour mon entrée en école d'ingénieur.",
                 "technologies": [
-                    "HTML/CSS",
+                    "HTML",
+                    "CSS",
                     "JS",
                     "Docker", 
                     "Bash"
@@ -226,9 +273,10 @@
             {
                 "id": 101,
                 "title": "Portfolio v1",
-                "description": "Mon premier portfolio",
+                "description": "Mon premier portfolio, réalisé en 1ere année de BUT informatique.",
                 "technologies": [
-                    "HTML/CSS",
+                    "HTML",
+                    "CSS",
                     "JS"
                 ],
                 "context": "Personnel, Mai 2023",
@@ -237,13 +285,31 @@
                 "type": ["favorite", "personal"],
                 "link": "https://github.com/YoannGTR/ancien-portfolio",
                 "image": "./ressources/assets/images/projets/portfolio_v1.png"
+            },
+            {
+                "id": 102,
+                "title": "La maison de Sylvain",
+                "description": "Site vitrine du restaurant \"La maison de Sylvain\".",
+                "technologies": [
+                    "HTML",
+                    "CSS",
+                    "JS",
+                    "PHP"
+                ],
+                "context": "Personnel, 2023",
+                "date": "2023-07-31",
+                "domain": ["web"],
+                "type": ["favorite", "personal"],
+                "link": "https://github.com/YoannGTR/la-maison-de-sylvain",
+                "linkLive": "https://www.lamaisondesylvain.fr",
+                "image": "./ressources/assets/images/projets/LaMaisonDeSylvain.png"
             }
         ],
         "Professionnel": [
             {
                 "id": 200,
                 "title": "Disserto",
-                "description": "Suite de logiciel permettant le développement et l'execution de service interactifs (DTMF, mots isolés ou langage naturel) pour le client Orange. Ce service est notamment utilisé par le numéro d'aide d'Orange (39 00).",
+                "description": "Suite de logiciel permettant le développement et l'execution de service interactifs.",
                 "technologies": [
                     "Java",
                     "Java Swing"
@@ -258,7 +324,7 @@
             {
                 "id": 201,
                 "title": "Talia",
-                "description": "Création d'un serveur et d'un client s'envoyant et analysant des requêtes netconf afin de simuler des équipements distants d'Orange.",
+                "description": "Création d'un serveur et d'un client s'envoyant et analysant des requêtes netconf afin de simuler des équipements distants.",
                 "technologies": [
                     "Java",
                     "XML",

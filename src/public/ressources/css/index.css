@@ -192,6 +192,31 @@ section {
   padding: 2rem;
   border-radius: 0.5rem;
   z-index: 2;
+  gap: 1rem;
+}
+#profileInfos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#profileLink {
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--color1);
+  color: var(--white);
+  text-decoration: none;
+  animation: pulse 2s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: #6817cb;
+  }
 }
 
 #profile_photo {
@@ -232,116 +257,110 @@ section {
   margin: 0 1.5rem;
 }
 
-#groups-skill {
+#article-skill > div {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  width: 100%;
-}
-
-.group-skill {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  padding: 0.5rem;
-  /* border: 3px solid var(--purple); */
+  gap: 2rem;
+  padding: 2rem 1rem;
   border-radius: 0.5rem;
+  /* background-color: var(--colorBgDarkMode); */
+}
+.groupSkill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+}
+.groupSkill > h3 {
+  color: var(--color1);
+  font-family: var(--jetbrainBold);
+  font-size: 1.5rem;
+  text-align: center;
 }
 
-.group-skill > h3 {
-  color: var(--black);
-}
-
-.skills {
+.groupSkill > div {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: start;
+  align-items: center;
+  gap: 1.5rem 1rem;
+  width: 100%;
+  max-width: 100%;
   flex-wrap: wrap;
-  gap: 1rem;
-  width: 100%;
+  /* background-color: #343434; */
 }
 
-.one-skill {
+.skill {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  background-color: var(--color2);
-  border-radius: 0.5rem;
-  width: 14rem;
-  transition: max-height 0.5s ease;
-  overflow: hidden;
-}
-
-.header-skill {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem;
-  gap: 1rem;
-  width: 100%;
-  background-color: var(--color1);
-  border-radius: 0.5rem;
-}
-
-
-.header-with-dropdown {
-  cursor: pointer;
-}
-
-.type-skill {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 0;
-  color: var(--white);
-}
-
-.note-skill,
-.note-under-skill {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  gap: 0rem;
-}
-
-.arrow-dropdown-skill {
-  width: 1.5rem;
-  height: 1.5rem;
-  object-fit: contain;
-}
-
-.note-skill > svg,
-.note-under-skill > svg {
-  width: 0.8rem;
-  height: 0.8rem;
-  object-fit: contain;
-}
-
-.body-skill {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
   gap: 0.5rem;
-  width: 100%;
-  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  padding: 0.5rem 0rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-family: var(--jetbrainBold);
+  font-size: 1rem;
 }
 
-.under-skill {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
+.tooltip {
+  position: absolute;
+  bottom: 92%; /* Positionne la tooltip au-dessus de l'élément */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color1);
+  color: var(--white);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+  font-family: var(--jetbrain);
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  /* z-index: 2; */
+}
+.skill:hover .tooltip,
+.skill:focus-within .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (hover: none) {
+  .skill:active .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.skill > img {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+  border: 2px solid var(--color1);
+}
+.skill > p {
+  font-family: var(--jetbrain);
+  font-size: 0.8rem;
+  color: var(--black);
+  text-align: center;
+  display: none;
+}
+.skill:hover {
+  transform: scale(1.2);
+  transition: 0.2s ease;
+}
+.skill.other >img{
+  background-color: rgb(241, 227, 245);
 }
 
 #experience {
@@ -618,11 +637,7 @@ section {
   color: var(--color1);
   font-size: 1.2rem;
 }
-#displayComp{
-  text-align: center;
-  font-family: var(--jetbrain);
-  font-size: 1.1rem;
-}
+
 .noProject {
   margin: 2rem auto;
   padding: 1rem 2rem;
@@ -634,120 +649,142 @@ section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1.5rem 5%;
+  gap: 1.5rem;
+  max-width: 30rem;
 }
 
+
 .project {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   border-radius: 0.7rem;
-  /* background-color: var(--color2); */
-  /* background-image: url('../assets/images/logo.png'); */
-  background-size: contain;
+  background-size: cover;
   background-position: top;
-  width: 47.5%;
+  width: 100%;
   border: 0.125rem solid var(--color1);
 
   transition: 0.1s ease-in-out;
 }
-
-.descProject {
-  margin-top: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  padding: 0.5rem;
-  border-radius: 0 0 0.5rem 0.5rem;
-  background-color: var(--color1);
-  opacity: 0.95;
-  transition: 0.1s ease-in-out;
-  gap: 0.5rem;
-  height: 7rem;
-}
-
-.resumeProject {
-  height: 0rem;
-  transition: 0.1s ease-in-out;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: flex-start;
-  gap: 0.5rem;
-  overflow: scroll;
-}
-.resume{
-  overflow: scroll;
+.descProjectDiv{
+  position: relative;
+  width: 100%;
   height: 100%;
-
-}
-
-.descProject h4,
-.descProject p {
-  color: var(--white);
-}
-
-.descProjectHeader {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: top;
-  justify-self: flex-start;
-}
-
-.descProjectHeader svg {
-  width: 2.5rem;
-  height: 2.5rem;
-  object-fit: contain;
-  display: none;
-}
-
-.descProject > p {
-  font-family: var(--jetbrainLight);
-}
-a.linkProject{
-  padding: 1rem 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 3rem 2rem 1rem 2rem;
+  background-color: rgba(26, 26, 26, 0.95); /* Replace var(--colorBgDarkMode) with its RGB equivalent */
   border-radius: 0.5rem;
-  background-color: var(--colorBgDarkMode);
+  
+  opacity: 0;
+}
+.project:hover .descProjectDiv, .project:active .descProjectDiv {
+  opacity: 1;
+}
+.descProjectDiv2{
+  visibility: visible;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: fit-content;
+  background-color: rgba(26, 26, 26, 0.95);
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.project:hover .descProjectDiv2, .project:active .descProjectDiv2 {
+  visibility: hidden;
+}
+
+.descProjectDiv2 .titleProject{
+  align-self: left;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.descProjectDiv2 .contextProject{
+  align-self: right;
+  text-align: right;
+}
+
+.titleProject {
+  font-family: var(--jetbrainBold);
   color: var(--white);
-  text-decoration: none;
-  transition: 0.2s ease;
-  width: fit-content;
-  align-self: center;
-}
-a.linkProject:hover, a.linkProject:active{
-  padding: 1rem 2rem;
-  background-color: var(--black);
-}
-p.linkProject{
-  padding: 1rem 1.5rem;
-  align-self: center;
-  width: fit-content;
-  color: var(--black);
-  background-color: var(--color2);
-  border: var(--colorBgDarkMode) 0.125rem solid;
-  border-radius: 0.5rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
-.contextProject{
-  text-align: right;
+.descProject {
+  color: var(--white);
+  font-family: var(--jetbrain);
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.5rem;
+  height: 100%;
+  margin-bottom: 1rem;
+}
+.technosProject {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-family: var(--jetbrainBold);
+  color: var(--white);
   font-size: 0.8rem;
-  align-self: right;
-  justify-self: flex-end;
+  text-align: center;
+}
+.technosProject>p {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 100rem;
+  background-color: var(--light-purple);
+  color: var(--black);
 }
 
-#contact{
+.linksProjectDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  width: 100%;
+  max-width: 100%;
+}
+
+.linkProject {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--color1);
+  color: var(--white);
+  text-decoration: none;
+  border: 0.125rem solid var(--color1);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+.contextProject {
+  font-family: var(--jetbrain);
+  color: var(--white);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+#contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
-
 }
-#contactDiv{
+#contactDiv {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -758,16 +795,16 @@ p.linkProject{
   border-radius: 0.5rem;
 }
 
-#contact h2{
+#contact h2 {
   color: var(--color1);
 }
 
-#contact p{
+#contact p {
   color: var(--white);
   text-align: center;
 }
 
-#contactDiv>button{
+#contactDiv > button {
   padding: 1rem 2rem;
   border-radius: 0.5rem;
   background-color: var(--color1);
@@ -779,7 +816,8 @@ p.linkProject{
   margin: 0.125rem 0.25rem;
 }
 
-#contactDiv>button:hover, #contactDiv>button:active{
+#contactDiv > button:hover,
+#contactDiv > button:active {
   background-color: var(--colorBgDarkMode);
   padding: 1.125rem 2.25rem;
   margin: 0;
@@ -818,9 +856,6 @@ p.linkProject{
     max-width: 35rem;
   }
 
-  #listProjects {
-    gap: 2rem 5%;
-  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -918,7 +953,7 @@ p.linkProject{
     font-size: 2rem;
   }
 
-  #profile {
+  #profileInfos {
     flex-direction: row;
   }
   #profile_text {
@@ -927,10 +962,34 @@ p.linkProject{
     color: var(--white);
   }
 
+  #article-skill {
+    scroll-margin-top: 6rem;
+  }
+  .skill>img {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .skill > p {
+    display: inline-block;
+  }
+  .skill:hover .tooltip,
+  .skill:focus-within .tooltip {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  @media (hover: none) {
+    .skill:active .tooltip {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
   #experience {
     position: relative;
     width: 100%;
     padding: 4rem 0;
+    scroll-margin-top: 2rem;
   }
 
   #containerExperience:before {
@@ -1040,46 +1099,20 @@ p.linkProject{
   }
 
   #listProjects {
-    gap: 2rem 1.2%;
+    gap: 2rem 2%;
     width: 100%;
-    max-width: 80rem;
+    max-width: 55rem;
   }
 
   .project {
-    width: 20rem;
-    max-width: 24.1%;
+    width: 40rem;
+    max-width: 49%;
     background-size: cover;
   }
-
-  .descProject {
-    margin-top: 15rem;
-    transition:  0.5s;
-    height: 5rem;
-    gap: 0.5rem;
-    justify-content: flex-end;
+  .descProject{
+    width: 90%;
   }
 
-  .project:hover .descProject {
-    margin-top: 0;
-    border-radius: 0.5rem;
-    height: 20rem;
-  }
-  .project:hover .descProject {
-    opacity: 0.95;
-  }
-
-  .resumeProject {
-    transition: height 0.5s;
-  }
-
-  .project:hover .resumeProject {
-    height: 100%;
-  }
-
-  .resumeProject .technos {
-    font-family: var(--jetbrainBold);
-    margin-top: 0.5rem;
-  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -1111,8 +1144,10 @@ p.linkProject{
   }
 
   #profile {
-    gap: 2rem;
     width: 60rem;
+  }
+  #profileInfos {
+    gap: 2rem;
   }
 
   #profile_text {
@@ -1127,24 +1162,6 @@ p.linkProject{
     width: 60rem;
   }
 
-  #groups-skill {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  .group-skill {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    gap: 2rem;
-    width: 100%;
-    max-width: 50%;
-  }
-
   #listExperience {
     width: 60rem;
   }
@@ -1153,7 +1170,13 @@ p.linkProject{
   #skills > h2 {
     align-self: center;
   }
-  #contactDiv{
+
+ 
+  .descProjectDiv{
+    /* padding: 3rem 2rem; */
+  }
+
+  #contactDiv {
     width: 60rem;
     gap: 1rem;
   }
@@ -1183,5 +1206,16 @@ p.linkProject{
 
   #groups-skill {
     gap: 3rem;
+  }
+
+  .descProjectDiv {
+    /* padding: 5rem 2rem; */
+  }
+   
+  .project{
+    max-width: 32%;
+  }
+  #listProjects {
+    max-width: 80rem;
   }
 }

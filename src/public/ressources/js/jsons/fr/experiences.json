@@ -7,7 +7,7 @@
     {
       "category": "study",
       "title": "Baccalauréat général",
-      "line": "Spécialité Mathématiques et Sciences de l'Ingénieur",
+      "line": "Spécialités Mathématiques et Sciences de l'Ingénieur",
       "mention": "Mention Bien",
       "dateBegin": "2019",
       "dateEnd": "2022",
@@ -34,12 +34,12 @@
     },
     {
       "category": "job",
-      "title": "Développeur-Concepteur en alternance",
+      "title": "Concepteur-Développeur en alternance",
       "company": "Open",
       "location": "Lannion, 22",
       "dateBegin": "2023",
       "dateEnd": "2025",
-      "description": "Développement d'un logiciel",
+      "description": "Développement de logiciels",
       "picture": "./ressources/assets/images/open.jpg"
     }
   ]
