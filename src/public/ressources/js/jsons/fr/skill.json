@@ -8,38 +8,43 @@
         "type": "language"
       },
       {
+        "name": "Spring Boot",
+        "level": 90,
+        "type": "other"
+      },
+      {
         "name": "PHP",
-        "level": 50,
-        "type": "language"
-      },
-      {
-        "name": "Python",
-        "level": 40,
-        "type": "language"
-      },
-      {
-        "name": "C",
-        "level": 40,
-        "type": "language"
-      },
-      {
-        "name": "SQL",
-        "level": 60,
+        "level": 70,
         "type": "language"
       },
       {
         "name": "Laravel",
-        "level": 40,
+        "level": 70,
         "type": "other"
       },
       {
+        "name": "Python",
+        "level": 70,
+        "type": "language"
+      },
+      {
+        "name": "C",
+        "level": 70,
+        "type": "language"
+      },
+      {
+        "name": "SQL",
+        "level": 70,
+        "type": "language"
+      },
+      {
         "name": "MySQL",
-        "level": 60,
+        "level": 70,
         "type": "other"
       },
       {
         "name": "PostgreSQL",
-        "level": 50,
+        "level": 70,
         "type": "other"
       }
     ],
@@ -55,47 +60,57 @@
         "type": "language"
       },
       {
+        "name": "TailwindCSS",
+        "level": 70,
+        "type": "other"
+      },
+      {
         "name": "JavaScript",
         "level": 70,
         "type": "language"
       },
       {
         "name": "TypeScript",
-        "level": 60,
+        "level": 70,
         "type": "language"
+      },
+      {
+        "name": "React",
+        "level": 70,
+        "type": "other"
+      },
+      {
+        "name": "Angular",
+        "level": 70,
+        "type": "other"
+      },
+      {
+        "name": "SolidJS",
+        "level": 70,
+        "type": "other"
+      },
+      {
+        "name": "VueJS",
+        "level": 70,
+        "type": "other"
       },
       {
         "name": "Java Swing",
         "level": 70,
         "type": "other"
-      },
-      {
-        "name": "Bootstrap",
-        "level": 30,
-        "type": "other"
-      },
-      {
-        "name": "React",
-        "level": 50,
-        "type": "other"
-      },
-      {
-        "name": "SolidJS",
-        "level": 50,
-        "type": "other"
-      },
-      {
-        "name": "VueJS",
-        "level": 40,
-        "type": "other"
-      },
-      {
-        "name": "TailwindCSS",
-        "level": 50,
-        "type": "other"
       }
     ],
     "System": [
+      {
+        "name": "Git",
+        "level": 70,
+        "type": "other"
+      },
+      {
+        "name": "Linux",
+        "level": 70,
+        "type": "other"
+      },
       {
         "name": "Bash",
         "level": 70,
@@ -107,8 +122,13 @@
         "type": "other"
       },
       {
-        "name": "Git",
-        "level": 70,
+        "name": "Docker Swarm",
+        "level": 60,
+        "type": "other"
+      },
+      {
+        "name": "RabbitMQ",
+        "level": 60,
         "type": "other"
       },
       {

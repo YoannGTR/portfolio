@@ -767,6 +767,7 @@ section {
   border: 0.125rem solid var(--color1);
   transition: 0.2s ease;
   cursor: pointer;
+  text-align: center;
 }
 .contextProject {
   font-family: var(--jetbrain);
@@ -804,7 +805,7 @@ section {
   text-align: center;
 }
 
-#contactDiv > button {
+#contactDiv button {
   padding: 1rem 2rem;
   border-radius: 0.5rem;
   background-color: var(--color1);
@@ -816,8 +817,8 @@ section {
   margin: 0.125rem 0.25rem;
 }
 
-#contactDiv > button:hover,
-#contactDiv > button:active {
+#contactDiv button:hover,
+#contactDiv button:active {
   background-color: var(--colorBgDarkMode);
   padding: 1.125rem 2.25rem;
   margin: 0;

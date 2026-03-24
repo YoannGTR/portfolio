@@ -282,7 +282,7 @@
                 "context": "Personnel, Mai 2023",
                 "date": "2023-05-01",
                 "domain": ["web"],
-                "type": ["favorite", "personal"],
+                "type": ["personal"],
                 "link": "https://github.com/YoannGTR/ancien-portfolio",
                 "image": "./ressources/assets/images/projets/portfolio_v1.png"
             },
@@ -317,7 +317,7 @@
                 "context": "Alternance, Open, 2024",
                 "date": "2024-08-01",
                 "domain": ["software"],
-                "type": ["favorite", "professional"],
+                "type": ["professional"],
                 "link": "",
                 "image": "./ressources/assets/images/projets/Disserto.jpg"
             },
@@ -334,9 +334,49 @@
                 "context": "Alternance, Open, 2024",
                 "date": "2023-10-01",
                 "domain": ["software", "system"],
-                "type": ["favorite", "professional"],
+                "type": ["professional"],
                 "link": "",
                 "image": "./ressources/assets/images/projets/talia.jpg"
+            },
+            {
+                "id": 202,
+                "title": "MOBA",
+                "description": "Passerelle entre des applications MQSeries, RabbitMQ, Kafka et Google cloud.",
+                "technologies": [
+                    "Java",
+                    "Python",
+                    "Docker Swarm",
+                    "RabbitMQ",
+                    "MQSeries",
+                    "Ansible",
+                    "Robot Framework"
+                ],
+                "context": "Alternance, Open, 2025",
+                "date": "2025-04-28",
+                "domain": ["software", "system"],
+                "type": ["professional"],
+                "link": "",
+                "image": "./ressources/assets/images/projets/moba.png"
+            },
+            {
+                "id": 203,
+                "title": "Be Modal",
+                "description": "Application web de reservation de train de transport de marchandises pour professionnels.",
+                "technologies": [
+                    "TailwindCSS",
+                    "TypeScript",
+                    "Angular",
+                    "PrimeNG",
+                    "Java",
+                    "Spring Boot",
+                    "SQL"
+                ],
+                "context": "Alternance, Lahaye, 2025-26",
+                "date": "2025-09-28",
+                "domain": ["software", "web", "database"],
+                "type": ["favorite", "professional"],
+                "link": "",
+                "image": "./ressources/assets/images/projets/BeModal.png"
             }
 
         ]
